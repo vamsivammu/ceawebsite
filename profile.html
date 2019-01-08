@@ -1,0 +1,649 @@
+<style>
+	    ol.w {list-style-type: inherit;line-height:2.2;text-align:justify;color: black}
+	    .dropdown .dropdown-menu.dropdown-info .dropdown-item:hover, .dropdown .dropdown-menu.dropdown-info .dropdown-item:focus 
+	    {background-color: #6ec7e0;}
+	    
+.columnphoto {
+	margin: 15px 15px 0;
+	padding: 0;
+}
+.columnphoto:last-child {
+	padding-bottom: 60px;
+}
+.columnphoto::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.columnphoto div {
+	position: relative;
+	float: left;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+.columnphoto div:first-child {
+	margin-left: 0;
+}
+.profile-content {
+    position: relative;
+  }
+  
+  .owner {
+    text-align: center;
+  }
+  
+  .owner .avatar {
+    padding: 15px;
+    max-width: 180px;
+    margin: -85px auto 0;
+    display: inline-block;
+  }
+  
+  .owner .name h4 {
+    margin-top: 10px;
+  }
+  
+.columnphoto div span {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	margin: 0;
+	padding: 0;
+	color: #444;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 0;
+}
+#figurephoto {
+	margin-top: 15px;
+	padding: 0;
+	background: #fff;
+}
+#figurephoto:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+.input-group-addon {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+  }
+
+.img-circle {
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+    padding: 4px;
+    border-radius: 50% !important;
+    max-width: 100%;
+  }
+
+  .img-no-padding {
+    padding: 0px;
+  }  
+i{
+    color: black;
+}
+
+/* Zoom Out #1 */
+.hover03 #figurephoto img {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover03 #figurephoto:hover img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.description {
+    color: #9A9A9A;
+  }
+  
+
+	</style>
+
+<div style="background-image: url('images/photos/large/1.jpg'); min-width:100%; height:250px; background-position: center; background-repeat: no-repeat; background-size: cover; ">
+</div>
+<div style="background-color:white" class="wrapper"> 
+    <div class="section-profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                        <img ng-src={{imgsrc}} alt="Circle Image" class="img-circle img-no-padding img-responsive"></a>
+                </div>
+                <div class="name">
+                        <h3 class="title">{{name}}<br /></h3><span><i class="fas fa-user fa-2x"></i></span>
+                        <h4 class="description">Welcome to Dash-board </h4><br>
+                </div>
+            </div>
+            <div class="row" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <h4 class="description">Your CEA ID CARD</h4><br>
+                        <div id="qr" >
+                            <img ng-src={{qrcode}}>
+                        </div>
+                        <h6 style="margin-top:40px;font-family:Montserrat, Helvetica, Arial, sans-serif; color:black;font-size:30px">CEA ID : {{ceaid}}</h6><br>
+                        <h6 style="font-family:Montserrat, Helvetica, Arial, sans-serif; color:black;font-size:30px;">College: {{clgname}}</h6><br>
+                        <h6 style="font-family:Montserrat, Helvetica, Arial, sans-serif; color:black;font-size:30px">Phone no: {{phone}}</h6>
+                        <br />
+                    </div>
+            </div>
+            <br/>
+            <center>
+                    <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#editprofileModal">edit profile</button> 
+                    <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#changepasswordModal">change password</button>
+ 
+                    <!--<button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#registereventsModal">register for events</button>-->
+                    <!--<button type="button" class="btn btn-outline-success btn-round btn-lg"data-toggle="modal" data-target="#workshopregisterModal">register for workshops</button> -->
+                    <!--<button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#researchexpoModal">register for research expo</button>-->
+ 
+            </center>
+            <br/>
+            
+        </div>
+
+
+    </div>
+
+
+</div>
+<div  class="modal fade" id="editprofileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                   <div class="modal-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-12">Name<span style="color:red"> *</span></label>
+                            <div class="input-group col-md-12">
+                                <input ng-change="namechange()" ng-model="ename" class="form-control" type="text" name="name" id="name1"  required>
+                                <span ><i class="fas fa-user fa-2x" aria-hidden="true" style="color:black"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-12">Phone<span style="color:red"> *</span></label>
+                            <div class="input-group col-md-12">
+                                <input ng-change="phonechange()" ng-model="ephone" class="form-control" type="text" name="phone" id="phone1"  required>
+                                <span class="input-group-addon" id="basic-addon1"><i class="fas fa-phone fa-2x" style="color:black" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-12">College<span style="color:red"> *</span></label>
+                            <div class="input-group col-md-12">
+                                <input ng-change="clgnamechange()" ng-model="eclgname" class="form-control" type="text" name="college" id="college1"  required>
+                                <span class="input-group-addon" id="basic-addon1"><i class="fas fa-book fa-2x" style="color:black" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <!-- <ol class="w" style="text-align:justify;">
+                            <li>The file size is limited to <strong>2MB</strong> and only <strong>.jpg</strong> are allowed</li>
+                        </ol> -->
+                        <!-- <span><strong>Profile Pic : </strong> <input type="file" name="profilephoto" accept="image/*" /></span> -->
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <div class="left-side">
+                            <button name="submit1" ng-click="editdetails()"  id="submit11" class="btn btn-success btn-link">Update</button>
+                        </div>
+                        <div class="divider"></div>
+                            <div class="right-side">
+                                <button type="button"  class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+		</div>
+    </div>
+    
+    <div class="modal fade" id="changepasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Change Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                   
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Old Password<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" ng-change="pass1change()" type="password" ng-model="pass1" name="oldpass"  placeholder = "enter your old password" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i style="color:black" class="fas fa-key fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">New Password<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" ng-change="pass2change()" type="password" ng-model="pass2" name="newpass" placeholder = "enter your new password" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i style="color:black" class="fas fa-key fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Confirm Password<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" ng-change="pass3change()" type="password" ng-model="pass3" name="confirmpass"  placeholder = "enter confirm password" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i style="color:black" class="fas fa-key fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div style="color:red;">
+                                    <small>{{err}}</small>
+                            </div>
+                            <div class="left-side">
+                                <button name="submit2" ng-click="updatepassword()" id="submit2" class="btn btn-success btn-link">Update</button>
+                            </div>
+                            <div class="divider"></div>
+                                <div class="right-side">
+                                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="registereventsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" style="color:black" id="exampleModalLabel">Register for Events</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol  class="w">
+                            <li>Please create your team.</li>
+                            <li>A person can participate in multiple events but, he/she cannot take part in the same event with two different teams.</li>
+                            <li>You will be the team captain by default if you register through your account.</li>
+                            <li>Only the team captain can deregister the team from an event.</li>
+                            <li>Enter the CEA IDs of your Team-mates.</li>
+                            <li>The size of team should be minimum of 2 members except for Essay Writing and Potential Professor.</li>
+                        </ol>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>Select an Event</option>
+                                <option ng-click="changeevent('Master Builder')">Master Builder</option>
+                                <option ng-click="changeevent('Prabandha')">Prabandha</option>
+                                <option ng-click="changeevent('Geo Genius')">Geo Genius</option>
+                                <option ng-click="changeevent('Concrete Challenge')">Concrete Challenge</option>
+                                <option ng-click="changeevent('Aquanomics')">Aquanomics</option>
+                                <option ng-click="changeevent('Bon Auto Routier')">Bon Auto Routier</option>
+                                <option ng-click="changeevent('Essay')">Essay</option>
+                                <option ng-click="changeevent('Encode Steel')">Encode Steel</option>
+                                <option ng-click="changeevent('Debate')">Debate</option>
+                                <option ng-click="changeevent('SDC')">SDC</option>
+                                <option ng-click="changeevent('Potential Professor')">Potential Professor</option>                                
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <div class="right-side">
+                            <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="multieventregisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" style="color:black" id="exampleModalLabel">{{eventname}} registration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form >
+                        <div class="modal-body">
+                            <center style="color:black">enter all CEA ID in caps</center><br>
+                                
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Captain CEA ID<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" value={{ceaid}} name="cap" disabled>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <!-- <? if(strcmp($_SESSION["event"],'Essay')!=0 and strcmp($_SESSION["event"],'Potential Professor')!=0 )
+                            {?> -->
+                            <div ng-show="eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
+                                <label class="control-label col-md-12">Vice-Captain CEA ID<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input ng-change="mem2change()" class="form-control" type="text" name="vicecap" ng-model="mem2" placeholder = "CEA19NXXXX" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <div ng-show="eventname != 'Essay' && eventname!='Potential Professor'"  class="form-group">
+                                <label class="control-label col-md-12">3rd member's CEA ID</label>
+                                <div class="input-group col-md-12">
+                                    <input ng-change="mem3change()" class="form-control" type="text" name="thirdmem" ng-model="mem3"  placeholder = "CEA19NXXXX" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <!-- <?
+                            if(strcmp($_SESSION["event"],'Aquanomics')!=0)
+                            {?> -->
+                            <div ng-show="eventname!='Aquanomics' && eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
+                                <label class="control-label col-md-12">4th member's CEA ID</label>
+                                <div class="input-group col-md-12">
+                                    <input ng-change="mem4change()" class="form-control" type="text" name="fourthmem" ng-model="mem4" placeholder = "CEA19NXXXX" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <!-- <?if(strcmp($_SESSION["event"],'Concrete Challenge')!=0 and strcmp($_SESSION["event"],'Geo Genius')!=0 and strcmp($_SESSION["event"],'Master Builder')!=0 and strcmp($_SESSION["event"],'Encode Steel')!=0 )
+                            {?> -->
+                            <div ng-show="eventname!='Aquanomics' && eventname!='Concrete Challenge' && eventname!='Geo Genius' && eventname!='Master Builder' && eventname!='Encode Steel' && eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
+                                <label class="control-label col-md-12">5th member's CEA ID</label>
+                                <div class="input-group col-md-12">
+                                    <input ng-change="mem5change()" class="form-control" type="text" name="fifthmem" ng-model="mem5"  placeholder = "CEA19NXXXX" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <!-- <?
+                            }
+                            }
+                            }?> -->
+                            <div style="text-align:center" class="form-group">
+                                <p style="color:red">{{iderr}}</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <div class="left-side">
+                                <button name="submit31" ng-click="registerforevents()" class="btn btn-success btn-link">Register</button>
+                            </div>
+                            <div class="divider"></div>
+                                <div class="right-side">
+                                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="workshopregisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" style="color:black" id="exampleModalLabel">Workshop registration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol class="w">
+                            <li>Registrations are <strong>confirmed</strong> only after the payment is done.</li>
+                        </ol>
+                            <p style="color:black">Amount needed to be paid is</p>
+                           
+                            <p style="color:black" ng-show="payment!==1">Fest registration Fee : &#x20B9 300</p>
+                            
+                            <b><p style="color:black">Workshop registration fee : &#x20B9 500 per workshop</p>
+                            <p style="color:black">Payments are to be done with <strong>1 hour</strong> of registration to confirm your seat</p></b>
+                            <br>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>Select an Event</option>
+                                    <option ng-click="changeworkshop('Air Quality Control')">Air Quality Control</option>
+                                    <option ng-click="changeworkshop('Structural Design')">Structural Design</option>                                
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="right-side">
+                            <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <!--- ############################## select the team for workshop registration modal ############################################ -->
+    
+        <div style="overflow-y:auto" class="modal fade" id="multiworkshopregisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 style="color:black" class="modal-title text-center" id="exampleModalLabel">{{workshop}} registration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form >
+                        <div class="modal-body">
+                            <p style="color:black">Amount needed to be paid is</p>
+                            
+                            <p ng-show="payment==1" style="color:black">{{workshop}} registration fee : &#x20B9 500 </p>
+                        
+                            <p ng-show="payment!==1" style="color:black">Fest registration Fee : &#x20B9 300<br> {{workshop}} registration fee : &#x20B9 500 <br><br> <b>Total amount needed to be paid : &#x20B9 800</b></p><br>
+                            <p style="font-weight: 500;color:black"><strong>Payments are to be done with 1 hour of registration to confirm your seat.<br>
+                            Registration will automatically get cancelled if payments are not done within 1 hour.</strong></p>
+                            <p style="font-weight: 500;color:black"><strong> Please mention your CEA ID in description during payment for reference</strong></p></center>
+                                <p style="color:#868e96">Please mention your Degree <font color="red"> *</font></p>
+                                <div class="form-group">
+                                    <select class="form-control" ng-model="deg">
+                                        <option >B.Tech</option>
+                                        <option >M.Tech</option>                                
+                                        <option >Ph.D</option>                                
+                                        <option >Others</option>                                
+                                    
+                                    </select>
+                                </div>
+                                
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Year of study<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input ng-change="changeyear()" class="form-control"  type="text" name="wyear" ng-model="curyear"  placeholder = "3rd year" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div><br>
+                            <br>
+                           
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <div class="left-side">
+                                <button name="submit41" ng-click="registerforworkshop()" class="btn btn-success btn-link">Register</button>
+                            </div>
+                            <div class="divider"></div>
+                                <div class="right-side">
+                                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    <!-- ##################################### research expo registration modal ########################### -->
+    
+        <div class="modal fade" id="researchexpoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" style="color:black" id="exampleModalLabel">Research Expo registration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form >
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Date Of Birth<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control datetimepicker" id="datetime" ng-click="dobchange()"   type="text" name="dob" ng-model="$parent.dob" placeholder = "dd/mm/yyyy" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <br><h4 style="text-align:center; color:#6ec7e0" >Address:</h4>
+                            <div class="form-group">
+                                <label class="control-label col-md-12"> Door no. and street name<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" name="street" ng-change="addchange()" ng-model="address"  placeholder = "enter your door no. and street name" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="addisvalid" style="color:red">{{adderr}}</small>
+                            
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">City / Town / Village<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" name="city" ng-change="citychange()" ng-model="city"  placeholder = "enter your city or town or village" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="cityisvalid" style="color:red">{{cityerr}}</small>
+    
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">State / Union Territory<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" ng-change="stachange()" name="state" ng-model="sta"  placeholder = "enter your state" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i></span>
+                                    </div>
+                                <small ng-hide="staisvalid" style="color:red">{{staerr}}</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Pincode<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" ng-change="pinchange()" type="text" name="pincode" ng-model="pincode"  placeholder = "enter your area pincode eg:600036" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="pinisvalid" style="color:red">{{pinerr}}</small>
+                                
+                            </div>
+                            <br><h4 style="text-align:center; color:#6ec7e0" >Educational qualification</h4>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">UG Degree<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" ng-change="ugchange()" name="ug" ng-model="ugdeg" placeholder = "enter your UG Degree" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-mortar-board fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="ugisvalid" style="color:red"> {{ugerr}}</small>
+                            
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">Discipline<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" ng-change="discchange()" name="discipline" ng-model="discip"  placeholder = "eg: Civil Engineering" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-mortar-board fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="discipisvalid" style="color:red">{{disciperr}}</small>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">University<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" name="univ" ng-change="univchange()" ng-model="univ" placeholder = "enter your university name" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-institution fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="univisvalid" style="color:red">{{univerr}}</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">CGPA/percentage (as on today)<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" name="cgpa" ng-change="cgchange()" ng-model="cgpa"  placeholder = "eg: 9.23" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <small ng-hide="cgisvalid " style="color:red">{{cgerr}}</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-12">year of graduation<font color="red"> *</font></label>
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" type="text" name="year" ng-change="yearchange()" ng-model="yearofgrad"  placeholder = "enter (expected) year of graduation" required>
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar-o fa-2x" aria-hidden="true"></i></span>
+                                </div>
+                                <p ng-hide="yearisvalid" style="color:red">{{yearerr}}</p>
+                            </div>
+                            <br><h4 style="text-align:center; color:#6ec7e0" >registration details</h4><br>
+                            <p style="color:#868e96">Appeared for gate 2016 <font color="red"> *</font></p>
+                            <div class="form-group">
+                                <select ng-model="gate" class="form-control">
+                                    <option selected ng-click="changeoptgate('Yes')">Yes</option>
+                                    <option ng-click="changeoptgate('No')">No</option>
+                                
+                                </select>
+                            </div>
+                            <p style="color:#868e96">Are you interested in presenting a poster in CEA 2019 Research Expo ? <font color="red"> *</font></p>
+                            <div class="form-group">
+                                <select ng-model="interest" class="form-control">
+                                    <option selected ng-click="changeoptposter('Yes')">Yes</option>
+                                    <option ng-click="changeoptposter('No')">No</option>                               
+                                </select>
+                            </div><br>
+                            <p style="color:#868e96">Please mention your area of specialization <font color="red"> *</font></p>
+                            <div class="form-group">
+                                <select ng-model="spec" class="form-control">
+                                    <option ng-click="changeoptspecial('BTCM')">Building Technology and Construction Management</option>
+                                    <option ng-click="changeoptspecial('EWRE')">Environmental and Water Resources Engineering</option>
+                                    <option ng-click="changeoptspecial('GEO')">Geotechnical Engineering</option>
+                                    <option ng-click="changeoptspecial('SE')">Structural Engineering</option>
+                                    <option ng-click="changeoptspecial('TE')">Transportation Engineering</option>
+                                    <option ng-click="changeoptspecial('None')">None/Others</option>                            
+                                </select>
+                            </div>
+                            <br><h4 style="text-align:center; color:#6ec7e0" >Upload your file in a PDF format <font color="red"> *</font></h4><br>
+                            <ol class="w" style="text-align:justify;">
+                                <center>It should consist the following documents</center><br>
+                                <li> Recent photograph of you, Statement of Purpose, Curriculum Vitae, Semester Mark Sheets, GATE admit Card</li>
+                                <li>The name of the file should be your CEA ID: <strong>CEA19Nxxxx.pdf</strong> for eg: CEA19N1234.pdf</li>
+                                <li>The file size is limited to <strong>2MB</strong> and only .pdf are allowed</li>
+                            </ol>
+                            <input type="file"  id="fileupl" style="color:black"  name="researchfile" />
+                                            
+        
+                        </div>
+                        <div class="modal-footer">
+                            <div class="left-side">
+                                <button name="submit5" ng-click="registerforresearchexpo()" id="submit5" class="btn btn-success btn-link">Register</button>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="right-side">
+                                <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<script>
+    var dt = document.getElementsByClassName("datetimepicker")
+    dt = angular.element(dt)
+   dt.datetimepicker({
+        icons: {
+            date: "fa fa-calendar",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+        },
+        format:'YYYY-MM-DD'
+    });    
+</script>
+

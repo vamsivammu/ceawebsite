@@ -1,0 +1,111 @@
+<style>
+   @import url("css/component.css");
+   @import url("css/demo.css");
+   
+   @media only screen and (max-width:766px){
+      
+	.registrationtitle{
+		background-color:brown;
+		
+      
+		font-family:Montserrat, Helvetica, Arial, sans-serif; 
+		color:white;
+		font-size:20px;
+		padding-left:5px;
+		padding-right:5px;
+		padding-top:10px;
+		padding-bottom:10px;
+		border-radius:10px;
+	}
+   
+}
+
+.registrationtitle{
+   background-color:brown;
+   text-align: center; 
+   font-family:Montserrat, Helvetica, Arial, sans-serif; 
+   color:white;
+   font-size:40px;
+   padding-left:5px;
+   padding-right:5px;
+   padding-top:10px;
+   padding-bottom:10px;
+   border-radius:10px;
+    /*margin-top:20px;*/
+    
+}
+
+
+</style>
+<div class="fs-form-wrap" id="fs-form-wrap">
+   
+   <form novalidate id="myform" class="fs-form fs-form-full" >
+      <ol class="fs-fields">
+         <li class="q1 fs-current">
+            <label  class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
+            <input ng-change="vn()" ng-model="name" class="fs-anim-lower" id="q1"  name="name" type="text" placeholder="Name" required/>
+         </li>
+         
+         <li class="q2">
+            <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your email address?</label>
+            <input class="fs-anim-lower" ng-change="ve()" ng-model="email" id="q2" name="email"  placeholder="dean@road.us" required/>
+           
+         </li>
+
+         <li class="q3">
+               <label class="fs-field-label fs-anim-upper" for="q5">What's the name of your college?</label>
+               <input class="fs-mark fs-anim-lower" ng-change="vc()" ng-model="clgname" id="q3" name="clgname"  type="text">
+         
+            </li>
+         <li class="q4">
+            <label class="fs-field-label fs-anim-upper" for="q4" data-info="Select one">What's your gender?</label>
+            <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+               <span><input id="q4a" ng-click="vg('M')"  name="gender" type="radio" value="male"/><label for="q4a" class="radio-mobile">Male</label></span>
+               <span><input id="q4b" ng-click="vg('F')" name="gender" type="radio" value="female"/><label for="q4b" class="radio-social">Female</label></span>
+               <span><input id="q4c" ng-click="vg('O')" name="gender" type="radio" value="conversion"/><label for="q4c" class="radio-conversion">Others</label></span>
+            </div>
+         </li>
+         
+         <li class="q5">
+            <label class="fs-field-label fs-anim-upper" for="q5">What's your mobile number?</label>
+            <input ng-model="phone" ng-change="vm()" name="phone" class="fs-anim-lower" required/>
+         </li>
+         
+         <li class="q6">
+            <label class="fs-field-label fs-anim-upper" for="q6">Type your password</label>
+            <input ng-model="regpass" ng-change="vp()" name="pass" class="fs-anim-lower" type="password" required/>
+         </li>
+         
+         <li class="q7">
+            <label class="fs-field-label fs-anim-upper" for="q7"><b>Retype </b>your password</label>
+            <input ng-model="reregpass" ng-change="vpp()" name="repass" class="fs-anim-lower" type="password" required/>
+         </li>
+     
+         
+      </ol><!-- /fs-fields -->
+      <button class="fs-submit" ng-click="register()" type="submit">Send answers</button>
+      <div style="position:absolute;top:50%;left:50%" ng-show="loading">
+         <h4 style="color:white">Loading</h4>
+      </div>
+   </form><!-- /fs-form -->
+   <span class="fs-message-error commonerr">{{err}}</span>
+   <span class="fs-message-error sameemail">This email is already registered</span>
+   <div style="margin-top:20px;"  class="row">
+         <div  class="col-xs-3 col-sm-3 col-md-3 col-xl-3">
+      <button  ng-click="validatecurrfield()" ques-prev class="btn btn-primary btn-round">prev</button>
+   </div>
+   <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 registrationtitle" >CEA RegistrationForm</div>
+   
+   <div style="text-align:right"  class="col-xs-3 col-sm-3 col-md-3 col-xl-3">
+      <button ng-click="validatecurrfield()" ques-next class="btn btn-primary btn-round">Next</button>
+   </div>
+
+  
+    </div>
+        <div class="row justify-content-center" >
+       <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6" style="text-align:center">
+         Already have an account? <a style="color:red" href="/2019/ceawebsite/login">Log In</a>     
+       </div>
+      
+   </div>
+</div><!-- /fs-form-wrap -->
