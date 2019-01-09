@@ -36,7 +36,7 @@ if($b['accomodation']!=0){
 }
 $out='Name: '.$a['firstname']."\n".'CEA ID: '.$ceaid."\n".'College: '.$a['college']."\n".'Events Registered: '.$a['events']."\n".'Workshops Registered: '.$a['workshops']."\n".'Fest Payment: '.$festpayment."\n".'Structural Workshop: '.$structural."\n".'Air Quality Workshop: '.$air."\n".'Accomodation Payment: '.$accpay."\n";
 $direc = __DIR__;
-$abs = $direc."/qr_".$a['ID'].".png";
+$abs = $direc."/qrs/qr_".$a['ID'].".png";
 QRcode::png($out,$abs);        
 
 ?>

@@ -8,6 +8,9 @@ var email
 x.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/",{
+        templateUrl:"home.html",
+        controller:"home"
+    }).when("/reg",{
         templateUrl:"registration.html",
         controller:"registration"
     }).when("/event",{
@@ -35,6 +38,13 @@ x.config(function($routeProvider,$locationProvider){
 //Registration
 
 var email;
+
+x.controller("home",function($scope){
+
+    
+
+})
+
 x.controller("registration",function($scope,$http){
     $scope.electronicmail=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     $scope.namepattern=/^[a-zA-Z ]{1,}$/;
@@ -878,7 +888,7 @@ x.controller("profile",function($scope,$http){
                 $scope.accomodation = r.data.accomodation
                 $scope.days = r.data.days
                 $scope.verified = r.data.verified1
-                $scope.qrcode = "qr_"+$scope.idd+".png"
+                $scope.qrcode = "qrs/qr_"+$scope.idd+".png"
                 
                 if($scope.gender="M"){
                     $scope.imgsrc = "images/profilePics/profilemale.jpg"

@@ -9,17 +9,10 @@
 ::-moz-selection {
   background: #2D2F36;
 }
-body {
-  background: white;
-  font-family: 'Inter UI', sans-serif;
-  margin: 0;
-  padding: 20px;
-}
+
 .page {
-  background: #e2e2e5;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 40px);
   position: absolute;
   place-content: center;
   width: calc(100% - 40px);
@@ -63,6 +56,7 @@ body {
   font-size: 50px;
   font-weight: 900;
   margin: 50px 40px 40px;
+
 }
 .eula {
   color: #999;
@@ -71,7 +65,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   margin: 0px;
 }
-.right {
+.loginpage {
   background: #474A59;
   box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
   color: #F1F1F2;
@@ -79,7 +73,7 @@ body {
   width: 50%;
 }
 @media (max-width: 767px) {
-  .right {
+  .loginpage {
     flex-shrink: 0;
     height: 100%;
     width: 99%;
@@ -154,7 +148,7 @@ input::-moz-focus-inner {
     </div>
     </div>
       
-      <div class="right">
+      <div class="loginpage">
         <svg viewBox="0 0 320 300">
           <defs>
             <linearGradient
