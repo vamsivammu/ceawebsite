@@ -2,7 +2,7 @@
 
 require 'connection.php';
 session_start();
-// include 'qr.php';
+include 'qr.php';
 $resp=array();
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
