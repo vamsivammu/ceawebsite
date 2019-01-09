@@ -425,7 +425,7 @@ x.controller("registration",function($scope,$http){
         
         $scope.login=function(){
             if($scope.emailisvalid && $scope.password.length!=0){
-                $scope.loading = "loading...."
+                $scope.loading = "loading.."
                 pre.modal("show")
                 $http({
                     method:"post",
