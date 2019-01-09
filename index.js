@@ -13,6 +13,9 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/event",{
         templateUrl:"events.html",
         controller:"events"
+    }).when("/projects",{
+        templateUrl:"projects.html",
+        controller:"projects"
     }).when("/login",{
         templateUrl:"login.html",
         controller:"logincontroller"
@@ -33,7 +36,9 @@ x.config(function($routeProvider,$locationProvider){
 })
 
 //Registration
-
+x.run(function($rootScope){
+    $rootScope.loggedin = localStorage.getItem("loggedin")
+})
 var email;
 
 x.controller("home",function($scope){
@@ -41,7 +46,11 @@ x.controller("home",function($scope){
 
 
 })
+x.controller("projects",function($scope){
 
+    console.log(document.querySelector('.grid--thumbs'))
+
+})
 x.controller("registration",function($scope,$http){
     $scope.electronicmail=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     $scope.namepattern=/^[a-zA-Z ]{1,}$/;
@@ -336,6 +345,7 @@ x.controller("registration",function($scope,$http){
     })
 
     x.controller("logincontroller",function($scope,$http,$location){
+       console.log("in")
         $scope.namepattern=/^[a-zA-Z0-9]{1,}$/;
         var electronicmail=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
         
@@ -707,7 +717,23 @@ x.controller("events",function($scope,$http){
         method:'get',
         url:'events.php'
     }).then(function(r){
-        
+        var removed = 0
+        for(var i=0;i<r.data.length;i++){
+            if(r.data[i].event=="STRUCTURAL DESIGN" || r.data[i].event=="AIR QUALITY CONTROL"){
+                    console.log(r.data[i].event)
+                r.data.splice(i,1)
+                    removed = removed+1
+                    
+                console.log(removed)
+                }
+                if(r.data[i].event=="STRUCTURAL DESIGN"){
+                    console.log(r.data[i].event)
+                r.data.splice(i,1)
+                    removed = removed+1
+                    
+                console.log(removed)
+                }
+        }
         $scope.events = r.data
         console.log(r.data)
         console.log(r.data[1].contact[0])

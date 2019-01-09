@@ -5,8 +5,10 @@
 
 <script src="./assets/js/jquery.loadingModal.js"></script>
 <link href="./assets/css/jquery.loadingModal.min.css"  rel="stylesheet">
+<script src="js/imagesloaded.pkgd.min.js"></script>
 
 
+<link rel="stylesheet" type="text/css" href="css/base.css" />
 <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet" />
@@ -20,12 +22,16 @@
 <link href="perspecnavbar.css" rel="stylesheet">
 <link href="css/normalize.css" rel="stylesheet">
 <script src="js/modernizr.custom.25376.js"></script>
-    
+
 <base href="/2019/ceawebsite/">
+<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+<script src="js/TweenMax.min.js"></script>
+
+<script src="js/demo.js"></script>
 </head>
 
-<body   ng-app="ceawebsite" ng-view>
-    <!-- <div id="perspective" class="perspective effect-rotateleft">
+<body   ng-app="ceawebsite">
+    <div id="perspective" class="perspective effect-rotateleft">
         <div class="containerr">
             <button style="position: absolute;top:10%;z-index:100" id="showMenu">Menu</button>
            
@@ -35,16 +41,18 @@
         
         </div>
         <nav class="outer-nav right vertical">
-            <a href="/" class="icon-home">Home</a>
-            <a href="" class="icon-news">A</a>
-            <a href="#" class="icon-image">B</a>
-            <a href="#" class="icon-upload">C</a>
-            <a href="#" class="icon-star">D</a>
-            <a href="#" class="icon-mail">E</a>
-            <a href="#" class="icon-lock">F</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite'" class="icon-home">HOME</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/event'" class="icon-news">EVENTS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/projects'" class="icon-image">PROJECTS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/workshops'" class="icon-upload">WORKSHOPS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" class="icon-star">RESEARCH EXPO</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/sponsors'" class="icon-mail">SPONSORS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" class="icon-lock">CONTACT US</a>
+            <a style="cursor:pointer" ng-show="loggedin" onclick="window.location.href='/2019/ceawebsite/profile'" class="icon-lock">PROFILE</a>
+            <a style="cursor:pointer" ng-hide="loggedin" onclick="window.location.href='/2019/ceawebsite/login'" class="icon-lock">LOGIN</a>
         </nav>
         
-    </div> -->
+    </div>
     
     
 
@@ -55,9 +63,11 @@
 
 </div> -->
 <!-- <script src="assets/js/core/jquery.min.js" type="text/javascript"></script> -->
+
 <script src="js/classie.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/fullpage.js"></script>
+
 <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="./assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 <script src="./assets/js/plugins/moment.min.js"></script>
@@ -76,6 +86,5 @@
 
 		
 </body>
-
 
 </html>
