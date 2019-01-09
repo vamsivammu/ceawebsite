@@ -8,9 +8,6 @@ var email
 x.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/",{
-        templateUrl:"home.html",
-        controller:"home"
-    }).when("/reg",{
         templateUrl:"registration.html",
         controller:"registration"
     }).when("/event",{
@@ -41,7 +38,7 @@ var email;
 
 x.controller("home",function($scope){
 
-    
+
 
 })
 
