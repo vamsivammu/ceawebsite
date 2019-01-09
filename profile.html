@@ -631,6 +631,46 @@ i{
             </div>
         </div>
 
+        
+    	<div class="modal fade" id="ref" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Feedback</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form >
+                        <div class="modal-body">
+    
+                            <p style="color:#868e96"> Where did you get to know about CEA? <font color="red"> *</font></p>
+                            <div class="form-group" >
+                                <select ng-model="gro" ng-change="g()" class="form-control" required>
+                                        <option>Campus Ambassador</option>
+                                        <option>Social Media</option>   
+                                </select>
+                            </div>
+
+                            <br>
+                            <div class="form-group"  ng-show="gro=='Campus Ambassador'">
+                            <input ng-model="groid" ng-change="gid()"  class=" form-control" placeholder="Enter CEAID" required>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="left-side">
+                                <button name="submitca" id="submitca" ng-click="submitref()" class="btn btn-success btn-link">Submit</button>
+                            </div>
+                            <div class="divider"></div>
+                                <div class="right-side">
+                                    <button type="button" class="btn btn-warning btn-link" data-dismiss="modal">Later</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 <script>
     var dt = document.getElementsByClassName("datetimepicker")
     dt = angular.element(dt)

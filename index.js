@@ -886,11 +886,60 @@ x.controller("profile",function($scope,$http){
                     $scope.imgsrc="images/profilePics/femaleprofile.jpg"
                 }
             })
+
+            $http({
+                method:'verify',
+                url:'referral.php',
+                headers:{'Content-Type':"application/x-form-www-urlencoded"}
+            }).then(function(r){
+                if(r.data.status==1){
+                    var ref = document.getElementById("ref")
+                    ref = angular.element(ref)
+                    ref.modal('show')
+                }else{
+                    console.log(1)
+                }
+            })
     }else{
         console.log("not logged in")
         window.location.pathname="/2019/ceawebsite/login"
     }
 
+    $scope.g = function(){
+        if($scope.gro!="Campus Ambassador"){
+            $scope.refer = $scope.gro
+        }else{
+            $scope.refer=""
+            $scope.groid = ""
+        }
+    }
+    
+    $scope.gid = function(){
+        $scope.refer = $scope.groid
+    }
+    $scope.submitref=function(){
+        $http({
+            method:'post',
+            url:'referral.php',
+            data:{
+                refer:$scope.refer
+            },
+            headers:{'Content_Type':'application/x-form-www-urlencoded'}
+        }).then(function(r){
+            if(r.data.status==1){
+                $scope.nouser=""
+                var ref = document.getElementById("ref")
+                ref = angular.element(ref)
+                ref.modal('hide')
+                alert("Thankyou for your feedback")
+            }else if(r.data.status==-1){
+                $scope.nouser=""
+                alert("Please try again after sometime")
+            }else if(r.data.status==0){
+                $scope.nouser = "This CEA ID is not found in database"
+            }
+        })
+    }
    
     $scope.changeevent=function(eve){
         $scope.eventname= eve
