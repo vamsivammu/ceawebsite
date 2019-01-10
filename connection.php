@@ -17,8 +17,8 @@
 
 
 
-$dbuser = "ceaiitm";
-$dbpass= "ceafest123@iitm";
+$dbuser = "root";
+$dbpass= "";
 $dbname = "ceaiitm_cea2019";
 $dbhost="localhost";
 $con= new mysqli($dbhost,$dbuser,$dbpass,$dbname);//two connections for accessing two tables

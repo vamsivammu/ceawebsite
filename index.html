@@ -9,6 +9,8 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/base.css" />
+
+
 <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet" />
@@ -33,22 +35,22 @@
 <body   ng-app="ceawebsite">
     <div id="perspective" class="perspective effect-rotateleft">
         <div class="containerr">
-            <img src="ceamenu.svg" id="showMenu"  style="width:30px;height:30px;position:absolute;right:2px;top:3px;z-index:100;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
+            <img src="ceamenu.svg" id="showMenu"  style="width:40px;cursor: pointer; height:40px;position:absolute;right:10px;top:10px;z-index:100;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
             <div class="wrapper" ng-view>
         
             </div>
         
         </div>
         <nav class="outer-nav right vertical">
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite'" class="icon-home">HOME</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/event'" class="icon-news">EVENTS</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/projects'" class="icon-image">PROJECTS</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/workshops'" class="icon-upload">WORKSHOPS</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" class="icon-star">RESEARCH EXPO</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/sponsors'" class="icon-mail">SPONSORS</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" class="icon-lock">CONTACT US</a>
-            <a style="cursor:pointer" ng-show="loggedin" onclick="window.location.href='/2019/ceawebsite/profile'" class="icon-lock">PROFILE</a>
-            <a style="cursor:pointer" ng-hide="loggedin" onclick="window.location.href='/2019/ceawebsite/login'" class="icon-lock">LOGIN</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite'" ><i class="fas fa-home"></i> HOME</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/event'" ><i class="far fa-calendar-alt"></i> EVENTS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/projects'" ><i class="fas fa-project-diagram"></i> PROJECTS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/workshops'" > WORKSHOPS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" >RESEARCH EXPO</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/sponsors'" ><i class="fas fa-handshake"></i> SPONSORS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" ><i class="fas fa-phone"></i> CONTACT US</a>
+            <a style="cursor:pointer" ng-show="loggedin" onclick="window.location.href='/2019/ceawebsite/profile'"><i class="fas fa-user"></i> PROFILE</a>
+            <a style="cursor:pointer" ng-hide="loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a>
         </nav>
         
     </div>
