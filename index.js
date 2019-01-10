@@ -10,11 +10,14 @@ var email
 x.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/",{
-        templateUrl:"registration.html",
-        controller:"registration"
+        templateUrl:"home.html",
+        controller:"home"
     }).when("/event",{
         templateUrl:"events.html",
         controller:"events"
+    }).when("/reg",{
+        templateUrl:"registration.html",
+        controller:"registration"
     }).when("/projects",{
         templateUrl:"projects.html",
         controller:"projects"
