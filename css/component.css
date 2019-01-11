@@ -169,7 +169,7 @@ button.fs-continue,
 .fs-fields > li {
 	position: relative;
 	z-index: 1000;
-	margin: 0;
+	margin-top: 14vh;
 	padding: 0;
 	border: none;
 }
@@ -889,6 +889,7 @@ input[type=text]::-ms-clear {
 	}
 
 	.fs-message-error {
+		margin-bottom: 777px;
 		bottom: 1.75em;
 		left: 0;
 		padding: 0 90px 0 2em;

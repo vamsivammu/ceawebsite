@@ -52,8 +52,8 @@ x.controller("home",function($scope){
 
 })
 x.controller("projects",function($scope){
-
-    console.log(document.querySelector('.grid--thumbs'))
+    console.log("projects")
+    console.log(document.querySelectorAll('.slide'))
 
 })
 x.controller("registration",function($scope,$http){

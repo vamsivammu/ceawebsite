@@ -1,117 +1,133 @@
-
+<svg class="hidden">
+            <symbol id="icon-arrow" viewBox="0 0 24 24">
+                <title>arrow</title>
+                <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+            </symbol>
+            <symbol id="icon-drop" viewBox="0 0 24 24">
+                <title>drop</title>
+                <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+                <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+            </symbol>
+            <symbol id="icon-longarrow" viewBox="0 0 54 24">
+                <title>longarrow</title>
+                <path d="M.42 11.158L12.38.256c.333-.27.696-.322 1.09-.155.395.166.593.467.593.903v6.977h38.87c.29 0 .53.093.716.28.187.187.28.426.28.716v5.98c0 .29-.093.53-.28.716a.971.971 0 0 1-.716.28h-38.87v6.977c0 .416-.199.717-.592.903-.395.167-.759.104-1.09-.186L.42 12.62a1.018 1.018 0 0 1 0-1.462z" />
+            </symbol>
+            <symbol id="icon-navarrow" viewBox="0 0 408 408">
+                <title>navarrow</title>
+                <polygon fill="#fff" fill-rule="nonzero" points="204 0 168.3 35.7 311.1 178.5 0 178.5 0 229.5 311.1 229.5 168.3 372.3 204 408 408 204"></polygon>
+            </symbol>
+        </svg>
 <main>
-        <div class="message">View on a larger screen to see the effect</div>
-        <!-- Grid lines -->
-        <div class="grid grid--deco">
-            <div class="grid__box"></div>
-            <div class="grid__box"></div>
-            <div class="grid__box"></div>
-            <div class="grid__box"></div>
-            <div class="grid__box"></div>
-        </div><!--/grid--deco-->
-        <!-- Outer grid (header, title, etc.) -->
-        <div class="grid grid--outer">
-            <header class="codrops-header">
-                <div class="codrops-links">
-                    <a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/CollapsingLogo/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-                    <a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=35087" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+          
+            <div class="slideshow">
+                <div class="slideshow__deco"></div>
+                <div class="slide">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img" style="background-image: url(project_images/trafficlight-inline.jpg);"></div>
+                    </div>
+                    <div class="slide__side"></div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">1</span>
+                        <h3 class="slide__title">Automatic Signal Timing</h3>
+                        <h4 class="slide__subtitle"></h4>
+                    </div>
                 </div>
-                <h1 class="codrops-header__title">Full Image Reveal Effect</h1>
-            </header>
-            <div class="title-wrap">
-                <h2 class="title">Andrew Jacobsen</h2>
-                <span class="subtitle">selected projects</span>
-                <span class="year">2018</span>
-            </div>
-            <a href="https://github.com/codrops/FullImageReveal/" class="github">GitHub</a>
-            <div class="side">
-                <span class="side__content">Produced in London</span>
-                <span class="side__content">Made by Brain Gap</span>
-            </div>
-        </div><!--/grid--outer-->
-        <!-- Full view container -->
-        <div class="fullview">
-            <div class="fullview__item" style="background-image: url(img/1.jpg)">
-                <span class="fullview__item-number">01</span>
-                <div class="fullview__item-titlewrap">
-                    <h3 class="fullview__item-title">Patterns of nature</h3>
-                    <p class="fullview__item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <span class="fullview__item-more">more</span>
+                <div class="slide">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img" style="background-image: url(project_images/radiation-reflecting.jpeg);"></div>
+                    </div>
+                    <div class="slide__side"></div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">2</span>
+                        <h3 class="slide__title">Radiation Reflecting Pavements</h3>
+                        <h4 class="slide__subtitle"></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="fullview__item" style="background-image: url(img/2.jpg)">
-                <span class="fullview__item-number">02</span>
-                <div class="fullview__item-titlewrap">
-                    <h3 class="fullview__item-title">Shapes from the future</h3>
-                    <p class="fullview__item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <span class="fullview__item-more">more</span>
+                <div class="slide">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img" style="background-image: url(project_images/construction_auto.jpg);"></div>
+                    </div>
+                    <div class="slide__side"></div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">3</span>
+                        <h3 class="slide__title">Construction Automation</h3>
+                        <h4 class="slide__subtitle"></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="fullview__item" style="background-image: url(img/3.jpg)">
-                <span class="fullview__item-number">03</span>
-                <div class="fullview__item-titlewrap">
-                    <h3 class="fullview__item-title">Black revelations</h3>
-                    <p class="fullview__item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <span class="fullview__item-more">more</span>
+                <div class="slide">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img" style="background-image: url(project_images/embankment.jpg);"></div>
+                    </div>
+                    <div class="slide__side"></div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">4</span>
+                        <h3 class="slide__title">Embankments using flexible reinforcement</h3>
+                        <h4 class="slide__subtitle"></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="fullview__item" style="background-image: url(img/4.jpg)">
-                <span class="fullview__item-number">04</span>
-                <div class="fullview__item-titlewrap">
-                    <h3 class="fullview__item-title">Silence and noise</h3>
-                    <p class="fullview__item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <span class="fullview__item-more">more</span>
+                <!-- <div class="slide">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img" style="background-image: url(img/5.jpg);"></div>
+                    </div>
+                    <div class="slide__side">Fun Diverge</div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">5</span>
+                        <h3 class="slide__title">Pastures</h3>
+                        <h4 class="slide__subtitle">Let's go up in here, and start having some fun</h4>
+                    </div>
                 </div>
-            </div>
-            <h3 class="fullview__title">Andrew Jacobsen</h3>
-        </div><!--/fullview-->
-        <!-- Revealer element -->
-        <div class="revealer"></div>
-        <!-- Thumbs grid -->
-        <div  class="grid grid--thumbs">
-            <div class="grid__item" data-revealer-color="#8779d2">
-                <h3 class="grid__item-title"><span>Patterns of nature</span></h3>
-                <span class="grid__item-number"><span>01</span></span>
-                <div class="grid__item-imgwrap">
-                    <img class="grid__item-img" src="img/thumb1.jpg" alt="Some image" />
-                    <div class="grid__item-bg" style="background-image: url(img/thumb1.jpg)"></div>
-                </div>
-            </div>
-            <div class="grid__item" data-revealer-color="#79a5d2">
-                <h3 class="grid__item-title"><span>Shapes from the future</span></h3>
-                <span class="grid__item-number"><span>02</span></span>
-                <div class="grid__item-imgwrap">
-                    <img class="grid__item-img" src="img/thumb2.jpg" alt="Some image" />
-                    <div class="grid__item-bg" style="background-image: url(img/thumb2.jpg)"></div>
-                </div>
-            </div>
-            <div class="grid__item" data-revealer-color="#79d2bd">
-                <h3 class="grid__item-title"><span>Black revelations</span></h3>
-                <span class="grid__item-number"><span>03</span></span>
-                <div class="grid__item-imgwrap">
-                    <img class="grid__item-img" src="img/thumb3.jpg" alt="Some image" />
-                    <div class="grid__item-bg" style="background-image: url(img/thumb3.jpg)"></div>
-                </div>
-            </div>
-            <div class="grid__item" data-revealer-color="#d2a279">
-                <h3 class="grid__item-title"><span>Silence and noise</span></h3>
-                <span class="grid__item-number"><span>04</span></span>
-                <div class="grid__item-imgwrap">
-                    <img class="grid__item-img" src="img/thumb4.jpg" alt="Some image" />
-                    <div class="grid__item-bg" style="background-image: url(img/thumb4.jpg)"></div>
-                </div>
-            </div>
-            <div class="grid__item grid__item--more">
-                <button class="grid__toggle">
-                    <span class="grid__toggle-inner grid__toggle-more">
-                        <span class="grid__toggle-text">more</span>
-                        <svg class="grid__toggle-icon grid__toggle-icon--more"><use xlink:href="#icon-plus"></use></svg>
-                    </span>
-                    <span class="grid__toggle-inner grid__toggle-back">
-                        <span class="grid__toggle-text">back</span>
-                        <svg class="grid__toggle-icon"><use xlink:href="#icon-arrowdown"></use></svg>
-                    </span>
+                <div class="slide">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img" style="background-image: url(img/6.jpg);"></div>
+                    </div>
+                    <div class="slide__side">Hopes &amp; Dreams</div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">6</span>
+                        <h3 class="slide__title">Focus</h3>
+                        <h4 class="slide__subtitle">This is unplanned it really just happens</h4>
+                    </div>
+                </div> -->
+                <button class="nav nav--prev">
+                    <svg class="icon icon--navarrow-prev">
+                        <use xlink:href="#icon-navarrow"></use>
+                    </svg>
+                </button>
+                <button class="nav nav--next">
+                    <svg class="icon icon--navarrow-next">
+                        <use xlink:href="#icon-navarrow"></use>
+                    </svg>
                 </button>
             </div>
-        </div><!--/grid--thumbs-->
-    </main>
+            <div class="content">
+                <div class="content__item">
+                    <span class="content__number">1</span>
+                    <h3 class="content__title">Automatic Signal Timing</h3>
+                    <h4 class="content__subtitle"></h4>
+                    <div class="content__text">Congestion during the peak hours mainly at the intersection is the major challenge of the hour.In order to alleviate this problem, automatic traffic diversion plan is introduced to prevent further congestion or accumulation of traffic and speeds up clearance, saving time and fuel and minimizing exhaust emissions.This can be achieved using a microcontroller in the traffic signal of a jammed road which communicates this to the previous traffic signal itself, so that users can automatically take a diversion.</div>
+                </div>
+                <div class="content__item">
+                    <span class="content__number">2</span>
+                    <h3 class="content__title">Radiation Reflecting Pavements</h3>
+                    <h4 class="content__subtitle"></h4>
+                    <div class="content__text">The goal of this venture is a literally and figuratively cooler pavement.This is done by spreading a thin gray coating of cool seal into the heart of the hottest neighborhood using the principle of reducing the heat absorption in the built environment which means basically boosting the solar reflectivity.</div>
+                </div>
+                <div class="content__item">
+                    <span class="content__number">3</span>
+                    <h3 class="content__title">Construction Automation</h3>
+                    <h4 class="content__subtitle"></h4>
+                    <div class="content__text">The goal of this venture is faster, simpler and more versatile construction by applying the principles of automated technology in building construction.The aim is to make construction process affordable for mass construction,save time and build versatility into the construction process.This introduces a new technological dimension in civil engineering.</div>
+                </div>
+                <div class="content__item">
+                    <span class="content__number">4</span>
+                    <h4 class="content__title">Embankments using flexible reinforcement</h4>
+                    <h4 class="content__subtitle"></h4>
+                    <div class="content__text">Have you ever wondered that plastic can be used as a reinforcement !!! Yes! It can be used as a reinforcement if we can identify the direction of its strength.Using the fact that “every material has strength in a specific direction”, here we use the strength of the flexible materials and use them as reinforcement in the structures.</div>
+                </div>
+                
+                <button class="content__close">
+                    <svg class="icon icon--longarrow">
+                        <use xlink:href="#icon-longarrow"></use>
+                    </svg>
+                </button>
+            </div>
+        </main>

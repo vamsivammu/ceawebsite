@@ -8,7 +8,7 @@
 		background-color:brown;
 		
       
-		font-family:Montserrat, Helvetica, Arial, sans-serif; 
+		
 		color:white;
 		font-size:20px;
 		padding-left:5px;
@@ -22,10 +22,10 @@
 
 .registrationtitle{
    background-color:brown;
-   text-align: center; 
-   font-family:Montserrat, Helvetica, Arial, sans-serif; 
+   text-align: center;  
    color:white;
-   font-size:40px;
+
+   font-size:32px;
    padding-left:5px;
    padding-right:5px;
    padding-top:10px;
@@ -90,12 +90,14 @@
    </form><!-- /fs-form -->
    <span class="fs-message-error commonerr">{{err}}</span>
    <span class="fs-message-error sameemail">This email is already registered</span>
-   <div style="margin-top:20px;"  class="row">
+    <div style="margin-top:20px;" class="row justify-content-center">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 registrationtitle" >CEA RegistrationForm</div>
+   </div>
+   <div style="margin-top:20px;"  class="row justify-content-around">
          <div  class="col-xs-3 col-sm-3 col-md-3 col-xl-3">
       <button  ng-click="validatecurrfield()" ques-prev class="btn btn-primary btn-round">prev</button>
    </div>
-   <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 registrationtitle" >CEA RegistrationForm</div>
-   
+  
    <div style="text-align:right"  class="col-xs-3 col-sm-3 col-md-3 col-xl-3">
       <button ng-click="validatecurrfield()" ques-next class="btn btn-primary btn-round">Next</button>
    </div>
