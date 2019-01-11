@@ -642,20 +642,21 @@ i{
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form >
+                    <form style="z-index: 100000" >
                         <div class="modal-body">
     
                             <p style="color:#868e96"> Where did you get to know about CEA? <font color="red"> *</font></p>
                             <div class="form-group" >
                                 <select ng-model="gro" ng-change="g()" class="form-control" required>
                                         <option>Campus Ambassador</option>
-                                        <option>Social Media</option>   
+                                        <option>Social Media</option>
+                                        <option>Your friends</option>   
                                 </select>
                             </div>
 
                             <br>
                             <div class="form-group"  ng-show="gro=='Campus Ambassador'">
-                            <input ng-model="groid" ng-change="gid()"  class=" form-control" placeholder="Enter CEAID" required>
+                            <input ng-model="groid" ng-change="gid()"  class=" form-control" placeholder="Enter CEAID of Campus Ambassador" >
                         </div>
                         </div>
                         <div class="modal-footer">

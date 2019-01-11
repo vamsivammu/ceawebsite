@@ -51,8 +51,8 @@
 			contentWrapper.style.top = docscroll * -1 + 'px';
 			// mac chrome issue:
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
-			// add modalview class
-			classie.add( perspectiveWrapper, 'modalview' );
+			// add mv class
+			classie.add( perspectiveWrapper, 'mv' );
 			// animate..
 			setTimeout( function() { classie.add( perspectiveWrapper, 'animate' ); }, 25 );
 		});
@@ -62,7 +62,7 @@
 				var onEndTransFn = function( ev ) {
 					if( support && ( ev.target.className !== 'containerr' || ev.propertyName.indexOf( 'transform' ) == -1 ) ) return;
 					this.removeEventListener( transEndEventName, onEndTransFn );
-					classie.remove( perspectiveWrapper, 'modalview' );
+					classie.remove( perspectiveWrapper, 'mv' );
 					// mac chrome issue:
 					document.body.scrollTop = document.documentElement.scrollTop = docscroll;
 					// change top of contentWrapper

@@ -1,6 +1,6 @@
 .perspective {
-    width: 100%;
-    height:100%;
+    min-width: 100%;
+    min-height:100%;
 	/* background: #aaa; */
 	position: relative;
 }
@@ -8,15 +8,16 @@
 
 .containerr {
 	background: #3b3f45;
+	min-width: 100%;
 	min-height: 100%;
 	position: relative;
 	outline: 1px solid rgba(0,0,0,0);
-	z-index: 10;
-	-webkit-transform: translateZ(0) translateX(0) rotateY(0deg); /* reset transforms (Chrome bug) */
-	transform: translateZ(0) translateX(0) rotateY(0deg);
+	/*z-index: 10;*/
+	/*-webkit-transform: translateZ(0) translateX(0) rotateY(0deg); */
+	/*transform: translateZ(0) translateX(0) rotateY(0deg);*/
 }
 
-.containerr::after {
+/*.containerr::after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -25,13 +26,15 @@
 	height: 0px;
 	opacity: 0;
 	background: rgba(0,0,0,0.2);
-	/* the transition delay of the height needs to be synced with the containerr transition time */
+	 the transition delay of the height needs to be synced with the containerr transition time 
 	-webkit-transition: opacity 0.4s, height 0s 0.4s;
 	transition: opacity 0.4s, height 0s 0.4s;
-}
+}*/
 
 .wrapper {
 	position: relative;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .component {
@@ -42,13 +45,13 @@
 }
 
 /* Modal view */
-.perspective.modalview {
+.perspective.mv {
 	position: fixed;
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.modalview .containerr {
+.mv .containerr {
 	position: absolute;
 	overflow: hidden;
 	width: 100%;
@@ -58,8 +61,8 @@
 	backface-visibility: hidden;
 }
 
-.modalview .wrapper {
-	-webkit-transform: translateZ(-1px); /* solves a rendering bug in Chrome on Windows */
+.mv .wrapper {
+	-webkit-transform: translateZ(-1px);  solves a rendering bug in Chrome on Windows 
 }
 
 .animate .containerr::after {

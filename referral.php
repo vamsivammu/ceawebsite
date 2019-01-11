@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $d = file_get_contents("php://input");
     $dd = json_decode($d);
     @$referred_by = (string)$dd->refer;
-    if($referred_by!="Social Media"){
+    if($referred_by!="Social Media" and $referred_by!="Your friends"){
         $stmt1 = $con->prepare("SELECT * FROM user2019 WHERE ID=?;");
     $stmt1->bind_param("i",$capid);
     $capid = substr($referred_by,6); 

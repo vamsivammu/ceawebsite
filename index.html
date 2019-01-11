@@ -2,7 +2,7 @@
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
-
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
 <script src="./assets/js/jquery.loadingModal.js"></script>
 <link href="./assets/css/jquery.loadingModal.min.css"  rel="stylesheet">
 <script src="js/imagesloaded.pkgd.min.js"></script>
@@ -30,32 +30,63 @@
 <script src="js/TweenMax.min.js"></script>
 
 <script src="js/demo.js"></script>
+<script >
+    var b = angular.element(document.getElementById("perspective"))
+    if(!b.hasClass("animate")){
+        var n = document.getElementById("n")
+        n = angular.element(n)
+        n.css({
+            "display":"none"
+        })
+    }
+
+
+    function shownav() {
+        // body...
+        console.log("menu")
+          var n = document.getElementById("n")
+        n = angular.element(n)
+        n.css({
+            "display":"block"
+        })  
+    }
+  
+     function hidenav(){
+        console.log("p")
+        var n = document.getElementById("n")
+        n = angular.element(n)
+        n.css({
+            "display":"none"
+        })
+     }
+
+</script>
 </head>
 
-<body style="font-family: 'Raleway', sans-serif; "   ng-app="ceawebsite">
+<body style="font-family: 'Raleway', sans-serif; min-height: 100%;"   ng-app="ceawebsite">
     <div id="perspective" class="perspective effect-rotateleft">
-        <div class="containerr">
-            <img src="ceamenu.svg" id="showMenu"  style="width:40px;cursor: pointer; height:40px;position:absolute;right:10px;top:10px;z-index:100;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
+        <div class="containerr" onclick="hidenav()">
+            <img src="ceamenu.svg" id="showMenu"  style="width:40px;cursor: pointer; height:40px;position:absolute;right:40px;top:10px;z-index:1000;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
             <div class="wrapper" ng-view>
         
             </div>
         
         </div>
-        <nav class="outer-nav right vertical">
+        <nav id="n" class="outer-nav right vertical">
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite'" ><i class="fas fa-home"></i> HOME</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/event'" ><i class="far fa-calendar-alt"></i> EVENTS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/projects'" ><i class="fas fa-project-diagram"></i> PROJECTS</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/workshops'" > WORKSHOPS</a>
-            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" >RESEARCH EXPO</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/workshops'" ><img style="width:51px;height:51px;padding: 0;" src="img/workshop.svg">WORKSHOPS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" ><img style="width:51px;height:51px;padding: 0;" src="img/research.svg">RESEARCH EXPO</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/sponsors'" ><i class="fas fa-handshake"></i> SPONSORS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" ><i class="fas fa-phone"></i> CONTACT US</a>
-            <a style="cursor:pointer" ng-show="loggedin" onclick="window.location.href='/2019/ceawebsite/login'"><i class="fas fa-user"></i> PROFILE</a>
+            <a style="cursor:pointer" ng-show="loggedin" onclick="window.location.href='/2019/ceawebsite/profile'"><i class="fas fa-user"></i> PROFILE</a>
             <a style="cursor:pointer" ng-hide="loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a>
         </nav>
         
     </div>
 
-    <div class="modal fade" id="preloader" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="preloader" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 
            
@@ -65,7 +96,7 @@
                       
                     
                 </div>
-            </div>
+            </div> -->
     
     
 
@@ -96,7 +127,23 @@
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="./assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script>
 <script src="index.js"></script>
-
+<script >
+     var n = document.getElementById("n")
+        n = angular.element(n)
+        n.css({
+            "display":"none"
+        })
+var m = document.getElementById("showMenu")
+    m = angular.element(m)
+    m.on("click touchstart",function(){
+        console.log("menu")
+        var n = document.getElementById("n")
+        n = angular.element(n)
+        n.css({
+            "display":"block"
+        })    
+    })
+</script>
 		
 </body>
 
