@@ -10,11 +10,14 @@ var email
 x.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/",{
-        templateUrl:"home.html",
-        controller:"home"
+        templateUrl:"starting.html",
+        controller:"loader"
     }).when("/event",{
         templateUrl:"events.html",
         controller:"events"
+    }).when("/home",{
+        templateUrl:"home.html",
+        controller:"home"
     }).when("/reg",{
         templateUrl:"registration.html",
         controller:"registration"
@@ -34,13 +37,14 @@ x.config(function($routeProvider,$locationProvider){
         templateUrl:"loading1.html",
         controller:"loader"
     }).otherwise({
-        redirectTo:'/'
+        redirectTo:'/home'
     })
     $locationProvider.html5Mode({enabled:true,requireBase:true})
 
 })
 
 //Registration
+localStorage.setItem("start",false)
 x.run(function($rootScope){
     $rootScope.loggedin = localStorage.getItem("loggedin")
 })
@@ -51,6 +55,19 @@ x.controller("home",function($scope){
 
 
 })
+
+x.controller("loader",function($scope){
+
+if(localStorage.getItem("start")){
+    window.location.path="/2019/ceawebsite/home"
+}else{
+        localStorage.setItem("start",true)
+}
+
+})
+
+
+
 x.controller("projects",function($scope){
     console.log("projects")
     console.log(document.querySelectorAll('.slide'))

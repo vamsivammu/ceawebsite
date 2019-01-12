@@ -9,6 +9,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/loader.css" />
 
 
 <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
@@ -121,6 +122,7 @@
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 <script src="js/demo.js"></script>
+<script src="js/jquery.lettering.js"></script>
 <!--  Google Maps Plugin  -->
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
 <!-- Place this tag in your head or just before your close body tag. -->
@@ -144,6 +146,25 @@ var m = document.getElementById("showMenu")
             "display":"block"
         })    
     })
+    var doc = document
+    doc = angular.element(doc)
+    
+    doc.ready(function() {
+        setTimeout(function(){
+            var es  = document.getElementsByClassName("starter")
+    console.log(es)
+    es=angular.element(es)
+
+        es.lettering('words').children("span").lettering().children("span").lettering(); 
+        var en = document.getElementById("end")
+        en=angular.element(en)
+        es.onanimationend=function(){
+            console.log("end")
+        }    
+    },1)
+        
+            })
+    
 </script>
 		
 </body>
