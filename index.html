@@ -33,6 +33,7 @@
 
 <!-- <script src="js/demo.js"></script> -->
 <script >
+    // localStorage.setItem("start",true)
     var b = angular.element(document.getElementById("perspective"))
     if(!b.hasClass("animate")){
         var n = document.getElementById("n")
@@ -61,7 +62,7 @@
             "display":"none"
         })
      }
-
+  
 </script>
 </head>
 
@@ -152,16 +153,19 @@ var m = document.getElementById("showMenu")
     doc.ready(function() {
         setTimeout(function(){
             var es  = document.getElementsByClassName("starter")
-    console.log(es)
+    // console.log(es)
     es=angular.element(es)
 
         es.lettering('words').children("span").lettering().children("span").lettering(); 
         var en = document.getElementById("end")
-        en=angular.element(en)
-        es.onanimationend=function(){
-            console.log("end")
-        }    
-    },1)
+    console.log(en)
+    en=angular.element(en)
+    console.log("after")
+            en.on("animationend webkitAnimationEnd oAnimationEnd",function(){
+                localStorage.setItem("start",false)
+                window.location.pathname="/2019/ceawebsite/home"
+            })
+    },10)
         
             })
     
