@@ -34,6 +34,30 @@
 <!-- <script src="js/demo.js"></script> -->
 <script >
     // localStorage.setItem("start",true)
+    
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "checkuser.php", true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify({
+    value: 'value'
+}));
+// var proceedfurther=false
+xhr.onload = function() {
+    var data = JSON.parse(this.responseText);
+  if(data.status==1){
+    // proceedfurther=true
+    localStorage.setItem("loggedin",true)
+  }else{
+    localStorage.setItem("loggedin",false)
+    if(window.location.pathname=="/2019/ceawebsite/profile"){
+    window.location.pathname="2019/ceawebsite/login"
+  }
+}
+}
+
+
     var b = angular.element(document.getElementById("perspective"))
     if(!b.hasClass("animate")){
         var n = document.getElementById("n")
@@ -64,12 +88,13 @@
      }
   
 </script>
+<script src="index.js"></script>
 </head>
 
 <body style="font-family: 'Raleway', sans-serif; min-height: 100%;"   ng-app="ceawebsite">
     <div id="perspective" class="perspective effect-rotateleft">
         <div class="containerr" onclick="hidenav()">
-            <img src="ceamenu.svg" id="showMenu"  style="width:40px;cursor: pointer; height:40px;position:absolute;right:40px;top:10px;z-index:1000;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
+            <img  src="ceamenu.svg" id="showMenu"  style="width:40px;cursor: pointer; height:40px;position:fixed;right:40px;top:10px;z-index:1000;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
             <div class="wrapper" ng-view>
         
             </div>
@@ -83,8 +108,8 @@
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" ><img style="width:51px;height:51px;padding: 0;" src="img/research.svg">RESEARCH EXPO</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/sponsors'" ><i class="fas fa-handshake"></i> SPONSORS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" ><i class="fas fa-phone"></i> CONTACT US</a>
-            <a style="cursor:pointer" ng-show="loggedin" onclick="window.location.href='/2019/ceawebsite/profile'"><i class="fas fa-user"></i> PROFILE</a>
-            <a style="cursor:pointer" ng-hide="loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a>
+            <a style="cursor:pointer" ng-show="!loggedin" onclick="window.location.href='/2019/ceawebsite/profile'"><i class="fas fa-user"></i> PROFILE</a>
+            <a style="cursor:pointer" ng-hide="!loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a>
         </nav>
         
     </div>
@@ -130,7 +155,7 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="./assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script>
-<script src="index.js"></script>
+
 <script >
      var n = document.getElementById("n")
         n = angular.element(n)
