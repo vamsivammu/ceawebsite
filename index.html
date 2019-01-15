@@ -1,6 +1,8 @@
 <html>
 
 <head>
+
+<base href="/2019/ceawebsite/">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
   <meta name="viewport" content="width=device-width, initial-scale=0.6">
 <script src="./assets/js/jquery.loadingModal.js"></script>
@@ -27,7 +29,6 @@
 <script src="js/modernizr.custom.25376.js"></script>
 <script src="js/charming.min.js"></script>
         
-<base href="/2019/ceawebsite/">
 <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 <script src="js/TweenMax.min.js"></script>
 
@@ -49,8 +50,10 @@ xhr.onload = function() {
   if(data.status==1){
     // proceedfurther=true
     localStorage.setItem("loggedin",true)
+    console.log(localStorage.getItem("loggedin"))
   }else{
     localStorage.setItem("loggedin",false)
+    console.log(localStorage.getItem("loggedin"))
     if(window.location.pathname=="/2019/ceawebsite/profile"){
     window.location.pathname="2019/ceawebsite/login"
   }
@@ -88,7 +91,7 @@ xhr.onload = function() {
      }
   
 </script>
-<script src="index.js"></script>
+<script src="index.js?1500"></script>
 </head>
 
 <body style="font-family: 'Raleway', sans-serif; min-height: 100%;"   ng-app="ceawebsite">
@@ -100,7 +103,7 @@ xhr.onload = function() {
             </div>
         
         </div>
-        <nav id="n" class="outer-nav right vertical">
+        <nav id="n" class="outer-nav right vertical" ng-controller="navbar">
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite'" ><i class="fas fa-home"></i> HOME</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/event'" ><i class="far fa-calendar-alt"></i> EVENTS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/projects'" ><i class="fas fa-project-diagram"></i> PROJECTS</a>
@@ -108,8 +111,8 @@ xhr.onload = function() {
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" ><img style="width:51px;height:51px;padding: 0;" src="img/research.svg">RESEARCH EXPO</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/spons'" ><i class="fas fa-handshake"></i> SPONSORS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" ><i class="fas fa-phone"></i> CONTACT US</a>
-            <a style="cursor:pointer" ng-show="!loggedin" onclick="window.location.href='/2019/ceawebsite/profile'"><i class="fas fa-user"></i> PROFILE</a>
-            <a style="cursor:pointer" ng-hide="!loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a>
+            <a style="cursor:pointer"  ng-click="goto(gotoname)"><i class="fas fa-user"></i> {{gotoname}}</a>
+            <!-- <a style="cursor:pointer" ng-if="!loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a> -->
         </nav>
         
     </div>
