@@ -47,6 +47,13 @@ xhr.send(JSON.stringify({
 // var proceedfurther=false
 xhr.onload = function() {
     var data = JSON.parse(this.responseText);
+    console.log(data)
+    if(data.start==0){
+        console.log(window.location.pathname)
+        if(window.location.pathname=="/2019/ceawebsite/"){
+            window.location.pathname="/2019/ceawebsite/home"
+        }
+    }
   if(data.status==1){
     // proceedfurther=true
     localStorage.setItem("loggedin",true)

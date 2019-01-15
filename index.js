@@ -92,11 +92,13 @@ x.controller("navbar",function($scope){
     console.log("navbar")
     $scope.loggedin=localStorage.getItem("loggedin")
     console.log($scope.loggedin)
-    if(!$scope.loggedin){
-        $scope.gotoname="LOGIN"
-    }else{
+    if($scope.loggedin){
         $scope.gotoname="PROFILE"
+        console.log($scope.loggedin)
+    }else{
+        $scope.gotoname="LOGIN"
     }
+    console.log($scope.gotoname)
     $scope.goto=function(y){
         window.location.pathname="/2019/ceawebsite/"+y.toLowerCase()
     }
