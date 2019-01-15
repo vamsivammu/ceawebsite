@@ -37,6 +37,18 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/loading",{
         templateUrl:"loading1.html",
         controller:"loader"
+    }).when("/spons",{
+        templateUrl:"comingsoon.html",
+        controller:"comingsoon"
+    }).when("/workshops",{
+        templateUrl:"comingsoon.html",
+        controller:"comingsoon"
+    }).when("/contact",{
+        templateUrl:"contact.html",
+        controller:"contact"
+    }).when("/research",{
+        templateUrl:"comingsoon.html",
+        controller:"comingsoon"
     }).otherwise({
         redirectTo:'/home'
     })
@@ -50,7 +62,9 @@ x.run(function($rootScope){
     $rootScope.loggedin = localStorage.getItem("loggedin")
 })
 var email;
+x.controller("comingsoon",function(){
 
+})
 x.controller("home",function($scope){
 
 console.log($scope.loggedin)
