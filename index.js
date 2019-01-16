@@ -71,6 +71,9 @@ x.controller("home",function($scope){
 
 
 })
+x.controller("contact",function($scope){
+    
+})
 
 x.controller("starting",function($scope){
 console.log("inside")
