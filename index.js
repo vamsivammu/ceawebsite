@@ -794,6 +794,13 @@ x.controller("events",function($scope,$http){
                     
                 console.log(removed)
                 }
+                if(r.data[i].event=="Online Quiz"){
+                    console.log(r.data[i].event)
+                r.data.splice(i,1)
+                    removed = removed+1
+                    
+                console.log(removed)
+                }
         }
         $scope.events = r.data
         console.log(r.data)

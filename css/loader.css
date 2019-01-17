@@ -1,6 +1,6 @@
 .os-phrases h2 {
 	font-family: 'Dosis', 'Lato', sans-serif;
-	font-size: 34px;
+	font-size: 20px;
 	font-weight: 200;
 	width: 100%;
 	overflow: hidden;
@@ -10,7 +10,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	letter-spacing: 14px;
+	/*letter-spacing: 1px;*/
 	text-align: center;
 }
 
@@ -67,15 +67,15 @@
 }
 
 .os-phrases h2:nth-child(2) > span > span > span {
-	-webkit-animation-delay: 3s;
-	-moz-animation-delay: 3s;
-	animation-delay: 3s;
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	animation-delay: 4s;
 }
 
 .os-phrases h2:nth-child(3) > span > span > span {
-	-webkit-animation-delay: 6s;
-	-moz-animation-delay: 6s;
-	animation-delay: 6s;
+	-webkit-animation-delay: 7s;
+	-moz-animation-delay: 7s;
+	animation-delay: 7s;
 }
 
 .os-phrases h2:nth-child(4) > span > span > span {
@@ -85,7 +85,7 @@
 }
 
 .os-phrases h2:nth-child(5) > span > span > span {
-	font-size: 150px;
+	font-size: 50px;
 	-webkit-animation-delay: 13s;
 	-moz-animation-delay: 13s;
 	animation-delay: 13s;
@@ -100,13 +100,13 @@
 @-webkit-keyframes OpeningSequence {
 	0% {
 		text-shadow: 0 0 50px #fff;
-		letter-spacing: 80px;
+		letter-spacing: 50px;
 		opacity: 0;
 		-webkit-transform: rotateY(-90deg);
 	}
 	50% {
 		text-shadow: 0 0 1px #fff;
-		letter-spacing: 14px;
+		letter-spacing: 7px;
 		opacity: 0.8;
 		-webkit-transform: rotateY(0deg);
 	}

@@ -48,12 +48,12 @@ xhr.send(JSON.stringify({
 xhr.onload = function() {
     var data = JSON.parse(this.responseText);
     console.log(data)
-    if(data.start==0){
-        console.log(window.location.pathname)
-        if(window.location.pathname=="/2019/ceawebsite/"){
-            window.location.pathname="/2019/ceawebsite/home"
-        }
-    }
+    // if(data.start==0){
+    //     console.log(window.location.pathname)
+    //     if(window.location.pathname=="/2019/ceawebsite/"){
+    //         window.location.pathname="/2019/ceawebsite/home"
+    //     }
+    // }
   if(data.status==1){
     // proceedfurther=true
     localStorage.setItem("loggedin",true)
@@ -99,9 +99,13 @@ xhr.onload = function() {
   
 </script>
 <script src="index.js?1500"></script>
+<style>
+      
+@import url('https://fonts.googleapis.com/css?family=Lato');
+</style>
 </head>
 
-<body style="font-family: 'Raleway', sans-serif; min-height: 100%;"   ng-app="ceawebsite">
+<body style="font-family: 'Lato', sans-serif; min-height: 100%;background-color: #3b3f45"   ng-app="ceawebsite">
     <div id="perspective" class="perspective effect-rotateleft">
         <div class="containerr" onclick="hidenav()">
             <img  src="ceamenu.svg" id="showMenu"  style="width:40px;cursor: pointer; height:40px;position:fixed;right:40px;top:10px;z-index:1000;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
