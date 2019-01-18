@@ -123,7 +123,7 @@
 	}
 }
 
-@-moz-keyframes OpeningSequence {
+/* @-moz-keyframes OpeningSequence {
 	0% {
 		text-shadow: 0 0 50px #fff;
 		letter-spacing: 80px;
@@ -147,7 +147,7 @@
 		-moz-transform: translateZ(130px);
 		pointer-events: none;
 	}
-}
+} */
 
 @keyframes OpeningSequence {
 	0% {

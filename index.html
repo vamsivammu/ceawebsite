@@ -193,8 +193,11 @@ var m = document.getElementById("showMenu")
         setTimeout(function(){
             var es  = document.getElementsByClassName("starter")
     // console.log(es)
+    setInterval(function(){
+              console.log(es)  
+            },2000)
     es=angular.element(es)
-
+            
         es.lettering('words').children("span").lettering().children("span").lettering(); 
         var en = document.getElementById("end")
     console.log(en)
