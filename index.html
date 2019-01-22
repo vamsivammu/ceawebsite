@@ -13,7 +13,8 @@
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <link rel="stylesheet" type="text/css" href="css/loader.css" />
 
-
+<link rel="stylesheet" type="text/css" href="css/contact.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -30,7 +31,7 @@
 <script src="js/charming.min.js"></script>
         
 <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-<script src="js/TweenMax.min.js"></script>
+
 
 <!-- <script src="js/demo.js"></script> -->
 <script >
@@ -48,18 +49,18 @@ xhr.send(JSON.stringify({
 xhr.onload = function() {
     var data = JSON.parse(this.responseText);
     console.log(data)
-    // if(data.start==0){
-    //     console.log(window.location.pathname)
-    //     if(window.location.pathname=="/2019/ceawebsite/"){
-    //         window.location.pathname="/2019/ceawebsite/home"
-    //     }
-    // }
+    if(data.start==0){
+        console.log(window.location.pathname)
+        if(window.location.pathname=="/2019/ceawebsite/"){
+            window.location.pathname="/2019/ceawebsite/home"
+        }
+    }
   if(data.status==1){
     // proceedfurther=true
-    localStorage.setItem("loggedin",true)
+    localStorage.setItem("loggedin","true")
     console.log(localStorage.getItem("loggedin"))
   }else{
-    localStorage.setItem("loggedin",false)
+    localStorage.setItem("loggedin","false")
     console.log(localStorage.getItem("loggedin"))
     if(window.location.pathname=="/2019/ceawebsite/profile"){
     window.location.pathname="2019/ceawebsite/login"
@@ -119,6 +120,7 @@ xhr.onload = function() {
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/event'" ><i class="far fa-calendar-alt"></i> EVENTS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/projects'" ><i class="fas fa-project-diagram"></i> PROJECTS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/workshops'" ><img style="width:51px;height:51px;padding: 0;" src="img/workshop.svg">WORKSHOPS</a>
+            <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/accommodation'" ><img style="width:51px;height:51px;padding: 0;" src="img/workshop.svg">ACCOMMODATION</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/research'" ><img style="width:51px;height:51px;padding: 0;" src="img/research.svg">RESEARCH EXPO</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/spons'" ><i class="fas fa-handshake"></i> SPONSORS</a>
             <a style="cursor:pointer" onclick="window.location.href='/2019/ceawebsite/contact'" ><i class="fas fa-phone"></i> CONTACT US</a>
@@ -150,10 +152,10 @@ xhr.onload = function() {
 </div> -->
 <!-- <script src="assets/js/core/jquery.min.js" type="text/javascript"></script> -->
 
+<script src="js/TweenMax.min.js"></script>
 <script src="js/classie.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/fullpage.js"></script>
-
 <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="./assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 <script src="./assets/js/plugins/moment.min.js"></script>
@@ -163,6 +165,8 @@ xhr.onload = function() {
 <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 <script src="js/demo.js"></script>
 <script src="js/jquery.lettering.js"></script>
+<script src="js/contact.js"></script>
+
 <!--  Google Maps Plugin  -->
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
 <!-- Place this tag in your head or just before your close body tag. -->
@@ -193,9 +197,9 @@ var m = document.getElementById("showMenu")
         setTimeout(function(){
             var es  = document.getElementsByClassName("starter")
     // console.log(es)
-    setInterval(function(){
-              console.log(es)  
-            },2000)
+    // setInterval(function(){
+    //           console.log(es)  
+    //         },2000)
     es=angular.element(es)
             
         es.lettering('words').children("span").lettering().children("span").lettering(); 

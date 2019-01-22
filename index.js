@@ -23,6 +23,9 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/projects",{
         templateUrl:"projects.html",
         controller:"projects"
+    }).when("/accommodation",{
+        templateUrl:"accommodation.html",
+        controller:"accom"
     }).when("/login",{
         templateUrl:"login.html",
         controller:"logincontroller"
@@ -71,6 +74,26 @@ x.controller("home",function($scope){
 
 
 })
+x.controller("accom",function($scope){
+    console.log("accom")
+
+    $scope.navigatetotab=function(b){
+        var o = document.getElementById(b)
+        o= angular.element(o)
+        console.log(o)
+        if(o.hasClass("active")){
+            console.log(o)
+        }else{
+            var other = document.querySelectorAll(".active")
+            console.log(other)
+            other = angular.element(other)
+            console.log(other)
+            other.removeClass("active")
+            o.addClass("active")
+
+        }
+    }
+})
 x.controller("contact",function($scope){
     
 })
@@ -95,7 +118,7 @@ x.controller("navbar",function($scope){
     console.log("navbar")
     $scope.loggedin=localStorage.getItem("loggedin")
     console.log($scope.loggedin)
-    if($scope.loggedin){
+    if($scope.loggedin=="true"){
         $scope.gotoname="PROFILE"
         console.log($scope.loggedin)
     }else{

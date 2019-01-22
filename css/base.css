@@ -61,68 +61,7 @@ a:focus {
 	background: var(--color-text);
 }
 
-/* Icons */
-.icon {
-	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	margin: 0 auto;
-	fill: currentColor;
-}
 
-.frame {
-	position: fixed;
-	z-index: 10000;
-	top: 5rem;
-	left: 0;
-	width: 100%;
-	max-width: none;
-	min-height: 0;
-	height: 100vh;
-	padding: 1rem;
-	pointer-events: none;
-}
-
-.frame a {
-	pointer-events: auto;
-}	
-
-/* Header */
-.codrops-header {
-	position: relative;
-	z-index: 100;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.codrops-header__title {
-	font-size: 1rem;
-	font-weight: normal;
-	line-height: 1;
-	margin: 0;
-}
-
-/* Top Navigation Style */
-.codrops-links {
-	position: relative;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	white-space: nowrap;
-}
-
-.github {
-	display: block;
-	padding: 0.25em;
-	margin: 0 0.25rem;
-}
-
-.codrops-icon {
-	display: inline-block;
-	padding: 0.25em;
-	margin: 0.25em 0 0 0;
-}
 
 .slideshow {
 	position: relative;
@@ -176,7 +115,7 @@ a:focus {
 	right: -20px;
 }
 
-.nav {
+.navv {
 	position: absolute;
 	background: none;
 	width: 3rem;
