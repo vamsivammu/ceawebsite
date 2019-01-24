@@ -51,7 +51,9 @@ xhr.onload = function() {
     console.log(data)
     if(data.start==0){
         console.log(window.location.pathname)
-       
+        if(window.location.pathname=="/2019/ceawebsite/"){
+            window.location.pathname="/2019/ceawebsite/home"
+        }
     }
   if(data.status==1){
     // proceedfurther=true
