@@ -1,7 +1,9 @@
 <html>
 
 <head>
-
+<style>
+    
+</style>
 <base href="/2019/ceawebsite/">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
   <meta name="viewport" content="width=device-width, initial-scale=0.6">
@@ -35,9 +37,25 @@
 
 <!-- <script src="js/demo.js"></script> -->
 <script >
+
+    function pageisloaded(){
+        console.log("page is loaded")
+        var p = document.getElementById("perspective")
+        p = angular.element(p)
+        p.css({
+            "display":"block"
+        })
+     p = document.getElementById("loadergif")
+        p = angular.element(p)
+        p.css({
+            "display":"none",
+            "z-index":0
+        })
+        
+    }
     // localStorage.setItem("start",true)
     
-
+var t = new Date()
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", "checkuser.php", true);
@@ -99,18 +117,19 @@ xhr.onload = function() {
      }
   
 </script>
-<script src="index.js?1500"></script>
+<script src="index.js?v="+t.toString()></script>
+
 <style>
       
 @import url('https://fonts.googleapis.com/css?family=Lato');
 </style>
 </head>
 
-<body style="font-family: 'Lato', sans-serif; min-height: 100%;background-color: #3b3f45"   ng-app="ceawebsite">
+<body onload="pageisloaded()"  style="font-family: 'Lato', sans-serif; min-height: 100%;background-color: #3b3f45"   ng-app="ceawebsite">
     <div id="perspective" class="perspective effect-rotateleft">
         <div class="containerr" onclick="hidenav()">
             <img  src="ceamenu.svg" id="showMenu"  style="width:50px;cursor: pointer; height:50px;position:fixed;right:25px;top:25px;z-index:1000;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
-            <div class="wrapper" ng-view>
+            <div  class="wrapper" ng-view>
         
             </div>
         
@@ -123,8 +142,10 @@ xhr.onload = function() {
             <a style="cursor:pointer;font-weight:1000" onclick="window.location.href='/2019/ceawebsite/accommodation'" ><img style="width:51px;height:51px;padding: 0;" src="img/workshop.svg">ACCOMMODATION</a>
             <a style="cursor:pointer;font-weight:1000" onclick="window.location.href='/2019/ceawebsite/research'" ><img style="width:51px;height:51px;padding: 0;" src="img/research.svg">RESEARCH EXPO</a>
             <a style="cursor:pointer;font-weight:1000" onclick="window.location.href='/2019/ceawebsite/spons'" ><i class="fas fa-handshake"></i> SPONSORS</a>
-            <a style="cursor:pointer;font-weight:1000" onclick="window.location.href='/2019/ceawebsite/contact'" ><i class="fas fa-phone"></i> CONTACT US</a>
+            <a style="cursor:pointer;font-weight:1000" onclick="window.location.href='/2019/ceawebsite/contactus'" ><i class="fas fa-phone"></i> CONTACT US</a>
             <a style="cursor:pointer;font-weight:1000"  ng-click="goto(gotoname)"><i class="fas fa-user"></i> {{gotoname}}</a>
+            <a style="cursor:pointer;font-weight:1000" id="log"  ng-click="logout()"><i class="fas fa-user"></i> {{out}}</a>
+            
             <!-- <a style="cursor:pointer" ng-if="!loggedin" onclick="window.location.href='/2019/ceawebsite/login'" >LOGIN</a> -->
         </nav>
         
@@ -151,6 +172,11 @@ xhr.onload = function() {
 
 </div> -->
 <!-- <script src="assets/js/core/jquery.min.js" type="text/javascript"></script> -->
+<div  id="loadergif"  style="position:absolute;align-content:center;top:0;width:100%;height:100%;text-align:center;display:block">
+
+    <img src="cea.gif">
+
+</div>
 
 <script src="js/TweenMax.min.js"></script>
 <script src="js/classie.js"></script>
@@ -216,7 +242,27 @@ var m = document.getElementById("showMenu")
             })
     
 </script>
-		
+		<script>
+                var wra = document.getElementsByClassName("wrapper")
+    
+                wra = angular.element(wra)
+            wra.onload=function(){
+                console.log("started")
+                var p = document.getElementById("loadergif")
+        p = angular.element(p)
+        p.css({
+            "display":"none"
+        }) 
+            }
+            window.onload=function(){
+                console.log("fire")
+                var p = document.getElementById("loadergif")
+        p = angular.element(p)
+        p.css({
+            "display":"none"
+        })
+            }
+        </script>
 </body>
 
 </html>

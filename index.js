@@ -6,6 +6,8 @@ var pre = document.getElementById("preloader")
 pre = angular.element(pre)
 var x = angular.module("ceawebsite",["ngRoute","ngSanitize"])
 var email
+var gif = document.getElementById("loadergif")
+gif = angular.element(gif)
 x.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/",{
@@ -26,6 +28,9 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/accommodation",{
         templateUrl:"accommodation.html",
         controller:"accom"
+    }).when("/contactus",{
+        templateUrl:"contactus.html",
+        controller:"contactus"
     }).when("/login",{
         templateUrl:"login.html",
         controller:"logincontroller"
@@ -74,6 +79,13 @@ x.controller("home",function($scope){
 
 
 })
+
+x.controller("contactus",function($scope){
+
+
+
+})
+
 x.controller("accom",function($scope){
     console.log("accom")
 
@@ -94,8 +106,29 @@ x.controller("accom",function($scope){
         }
     }
 })
-x.controller("contact",function($scope){
+x.controller("contactus",function($scope){
+
+    $scope.contactarray = [{
+        "pos":"Secretary",
+        "name":"Shandilia",
+        "contact":"8056157508",
+        "email":"saishandilia@gmail.com"
+    },
+    {
+        "pos":"Secretary",
+        "name":"Chethana",
+        "contact":"9940125045",
+        "email":"chetanakumar7@gmail.com"
+    },
+    {
+        "pos":"PG Secretary",
+        "name":"Vaishnav Kumar",
+        "contact":"9585347553",
+        "email":"svaishnavkumar@gmail.com"
+    }
     
+]
+
 })
 
 x.controller("starting",function($scope){
@@ -114,19 +147,54 @@ x.controller("projects",function($scope){
     console.log(document.querySelectorAll('.slide'))
 
 })
-x.controller("navbar",function($scope){
+x.controller("navbar",function($scope,$http){
     console.log("navbar")
     $scope.loggedin=localStorage.getItem("loggedin")
     console.log($scope.loggedin)
     if($scope.loggedin=="true"){
         $scope.gotoname="PROFILE"
+        $scope.out="Logout"
+        var l = document.getElementById("log")
+        l = angular.element(l)
+        l.css({
+            "display":'block'
+        })
         console.log($scope.loggedin)
+
     }else{
         $scope.gotoname="LOGIN"
+        $scope.out=null
+        var l = document.getElementById("log")
+        l = angular.element(l)
+        l.css({
+            "display":'none'
+        })
+
     }
     console.log($scope.gotoname)
     $scope.goto=function(y){
         window.location.pathname="/2019/ceawebsite/"+y.toLowerCase()
+    }
+    $scope.logout=function(){
+      
+        if($scope.out=="Logout"){
+            $http({
+                method:'post',
+                url:'logout.php',
+                headers:{'Content-Type':'application/x-www-form-urlencoded'}
+            }).then(function(r){
+                
+                console.log(r.data)
+                if(r.data.status==1){
+                    $scope.loadergif=false
+                    alert("You are successfully logged out")
+                    window.location.pathname="/2019/ceawebsite/login"
+                }else{
+                    alert("There is some error,Please try again after sometime")
+                    window.location.pathname="/2019/ceawebsite/login"
+                }
+            })
+        }
     }
     // console.log(document.querySelectorAll('.slide'))
 
@@ -494,6 +562,7 @@ x.controller("registration",function($scope,$http){
         }
 
         $scope.vp=function(){
+            
             if($scope.password.length==0){
                 $scope.passerr="Password is required"
             }else{
@@ -503,9 +572,11 @@ x.controller("registration",function($scope,$http){
 
         
         $scope.login=function(){
+
             if($scope.emailisvalid && $scope.password.length!=0){
+              
                 $scope.loading = "loading.."
-                pre.modal("show")
+                // pre.modal("show")
                 $http({
                     method:"post",
                     url:"login.php",
@@ -792,16 +863,33 @@ x.directive("logIn",function(){
      var books 
 x.controller("events",function($scope,$http){
     console.log("in controller")
+    
+    
     $scope.sometext = "<p>hiii</p>"
      $scope.el = angular.element('<p>hiii</p>')
      $scope.el = $scope.el[0].innerHTML
      console.log($scope.el)
-
+    var gif = document.getElementById("loadergif")
+    gif = angular.element(gif)
+    gif.css({
+        "display":"block"
+    })
     $http({
         method:'get',
         url:'events.php'
     }).then(function(r){
         var removed = 0
+        var te=10000
+    // while(te>=0){
+    //     console.log("te")
+    //     te=te-1
+    // }
+    var gif = document.getElementById("loadergif")
+    gif = angular.element(gif)
+    gif.css({
+        "display":"none"
+    })
+    
         for(var i=0;i<r.data.length;i++){
             if(r.data[i].event=="STRUCTURAL DESIGN" || r.data[i].event=="AIR QUALITY CONTROL"){
                     console.log(r.data[i].event)
@@ -836,8 +924,6 @@ x.controller("events",function($scope,$http){
         console.log(r.data)
         console.log(r.data[1].contact[0])
     })
-
-
     
 
 })
