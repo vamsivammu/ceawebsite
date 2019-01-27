@@ -433,6 +433,12 @@
                 else if ( slide.isPositionedLeft() ) {
                     this.navigate('prev');
                 }
+                else if(slide=="next"){
+                    this.navigate('next');
+                }
+                else if(slide=="prev"){
+                    this.navigate('prev');
+                }
                 else {
                     this.showContent();
                 }
@@ -441,6 +447,17 @@
                 slide.DOM.imgWrap.addEventListener('click', () => this.clickFn(slide));
             }
 
+            var prevbu  = document.getElementsByClassName("nav--prev")
+            var nextbu = document.getElementsByClassName("nav--next")
+            // console.log(prevbu)
+            prevbu = angular.element(prevbu)
+            nextbu = angular.element(nextbu)
+            // prevbu.addEventListener("click",()=>this.clickFn('prev'))
+            // nextbu.addEventListener("click",()=>this.clickFn('next'))
+            console.log(prevbu)
+            prevbu.on("click",()=>this.navigate("prev"))
+            
+            nextbu.on("click",()=>this.navigate("next"))
             this.resizeFn = () => {
                 // Reposition the slides.
                 this.nextSlide.setRight(this.isContentOpen);
@@ -526,6 +543,7 @@
         // Navigate the slideshow.
         navigate(direction) {
             // If animating return.
+            console.log(direction)
             if ( this.isAnimating ) return;
             this.isAnimating = true;
             allowTilt = false;

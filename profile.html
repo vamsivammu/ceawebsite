@@ -276,7 +276,7 @@ i{
                             <li>The size of team should be minimum of 2 members except for Essay Writing and Potential Professor.</li>
                         </ol>
                         <div class="form-group">
-                            <select class="form-control">
+                            <select class="form-control" ng-model="testevent" ng-change="testchangeevent()">
                                 <option>Select an Event</option>
                                 <option ng-click="changeevent('Master Builder')">Master Builder</option>
                                 <option ng-click="changeevent('Prabandha')">Prabandha</option>

@@ -53,7 +53,7 @@ x.config(function($routeProvider,$locationProvider){
         templateUrl:"contact.html",
         controller:"contact"
     }).when("/research",{
-        templateUrl:"comingsoon.html",
+        templateUrl:"research.html",
         controller:"comingsoon"
     }).otherwise({
         redirectTo:'/home'
@@ -125,7 +125,20 @@ x.controller("contactus",function($scope){
         "name":"Vaishnav Kumar",
         "contact":"9585347553",
         "email":"svaishnavkumar@gmail.com"
+    },
+    {
+        "pos":"M & SR",
+        "name":"Sai Bhargav",
+        "contact":"8096159615",
+        "email":"ceaoutreach@gmail.com"
+    },
+    {
+        "pos":"M & SR",
+        "name":"Sreedevi N",
+        "contact":"9500188432",
+        "email":"ceaoutreach@gmail.com"
     }
+    
     
 ]
 
@@ -1158,7 +1171,16 @@ x.controller("profile",function($scope,$http){
             }
         })
     }
-   
+   $scope.testchangeevent=function(){
+       console.log($scope.testevent)
+       var m = document.getElementById("registereventsModal")
+        m = angular.element(m)
+         m.modal('hide')
+         var m1 = document.getElementById("multieventregisterModal")
+         m1 = angular.element(m1)
+         m1.modal('show')
+         
+   }
     $scope.changeevent=function(eve){
         $scope.eventname= eve
         var m = document.getElementById("registereventsModal")
