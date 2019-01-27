@@ -5,6 +5,11 @@
     
 </style>
 <base href="/2019/ceawebsite/">
+<style>
+    #perspective{
+        display: none;
+    }
+</style>
 <title>
     CEA FEST 2019 || IIT MADRAS
 </title>
@@ -249,24 +254,31 @@ var m = document.getElementById("showMenu")
 </script>
 		<script>
                 var wra = document.getElementsByClassName("wrapper")
-    
+    var doc = window
+    doc = angular.element(doc)
                 wra = angular.element(wra)
-            wra.onload=function(){
+            wra.on("load",function(){
                 console.log("started")
                 var p = document.getElementById("loadergif")
         p = angular.element(p)
         p.css({
             "display":"none"
         }) 
-            }
-            window.onload=function(){
-                console.log("fire")
-                var p = document.getElementById("loadergif")
+            })
+        doc.on("load",function(){
+            console.log("fire")
+            var p = document.getElementById("loadergif")
+    p = angular.element(p)
+    p.css({
+        "display":"none"
+    })
+    p = document.getElementById("perspective")
         p = angular.element(p)
         p.css({
-            "display":"none"
+            "display":"block"
         })
-            }
+})    
+
         </script>
 </body>
 
