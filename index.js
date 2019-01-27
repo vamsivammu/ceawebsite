@@ -138,6 +138,7 @@ x.controller("contactus",function($scope){
         "contact":"9500188432",
         "email":"ceaoutreach@gmail.com"
     }
+   
     
     
 ]
