@@ -126,6 +126,7 @@ x.controller("contactus",function($scope){
         "contact":"9585347553",
         "email":"svaishnavkumar@gmail.com"
     }
+   
     
 ]
 
