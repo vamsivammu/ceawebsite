@@ -320,7 +320,7 @@
     .book-1 .bk-back,
     .book-1 .bk-left,
     .book-1 .bk-front:after {
-        background-color: rebeccapurple;
+        background-color: rgb(254, 198, 15);
     }
     
     /* .book-1 .bk-cover {
@@ -335,8 +335,10 @@
         right: 0;
         left: 0;
         padding: 30px;
+        font-weight: 1000;
+        font-size: 40px;
         background: rgba(255,255,255,0.2);
-        color: #fff;
+        color: rgb(0,25,127);
         text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     }
     
@@ -415,7 +417,7 @@
                 <div  class="bk-book book-1 bk-bookdefault">
                     <div class="bk-front">
                         <div class="bk-cover-back"></div>
-                        <div class="bk-cover">
+                        <div class="bk-cover" style="background-image:url('imgs/events/{{event.event}}.jpg');background-size:cover;background-position-x:50%">
                             <h2>
                                 <span>CEA Fest</span>
                                 <span>{{event.event}}</span>
