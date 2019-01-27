@@ -6,11 +6,22 @@
 </style>
 <base href="/2019/ceawebsite/">
 <style>
-    #perspective{
-        display: none;
+    
+    .no-js #loader { display: none;  }
+    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(cea.gif) center no-repeat #fff;
     }
 </style>
+
 <title>
+
     CEA FEST 2019 || IIT MADRAS
 </title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
@@ -123,7 +134,14 @@ xhr.onload = function() {
             "display":"none"
         })
      }
-  
+ //var wind = window
+ //wind = angular.element(wind)
+ //console.log(wind)
+ $(window).on("load",function(){
+     var ic = document.getElementsByClassName("se-pre-con")
+     ic=angular.element(ic)
+     ic.fadeOut("slow")
+ }) 
 </script>
 <script src="index.js?v=450"></script>
 <script>
@@ -135,7 +153,7 @@ xhr.onload = function() {
 </style>
 </head>
 
-<body onload="pageisloaded()"  style="font-family: 'Lato', sans-serif; min-height: 100%;background-color: #3b3f45"   ng-app="ceawebsite">
+<body   style="font-family: 'Lato', sans-serif; min-height: 100%;background-color: #3b3f45"   ng-app="ceawebsite">
     <div id="perspective" class="perspective effect-rotateleft">
         <div class="containerr" onclick="hidenav()">
             <img  src="ceamenu.svg" id="showMenu"  style="width:50px;cursor: pointer; height:50px;position:fixed;right:25px;top:25px;z-index:1000;background-color:white;border-radius:7px;opacity:0.6;border-color:black"/>
@@ -182,12 +200,14 @@ xhr.onload = function() {
 
 </div> -->
 <!-- <script src="assets/js/core/jquery.min.js" type="text/javascript"></script> -->
-<div  id="loadergif"  style="position:absolute;align-content:center;top:0;width:100%;height:100%;text-align:center;display:block">
+<!-- <div  id="loadergif"  style="position:absolute;align-content:center;top:0;width:100%;height:100%;text-align:center;display:block">
 
     <img src="cea.gif">
 
-</div>
+</div> -->
+<div class="se-pre-con">
 
+</div>
 <script src="js/TweenMax.min.js"></script>
 <script src="js/classie.js"></script>
 <script src="js/menu.js"></script>
@@ -253,7 +273,7 @@ var m = document.getElementById("showMenu")
     
 </script>
 		<script>
-                var wra = document.getElementsByClassName("wrapper")
+       /*         var wra = document.getElementsByClassName("wrapper")
     var doc = window
     doc = angular.element(doc)
                 wra = angular.element(wra)
@@ -277,7 +297,7 @@ var m = document.getElementById("showMenu")
         p.css({
             "display":"block"
         })
-})    
+})    */
 
         </script>
 </body>

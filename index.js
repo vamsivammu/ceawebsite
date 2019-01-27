@@ -6,8 +6,8 @@ var pre = document.getElementById("preloader")
 pre = angular.element(pre)
 var x = angular.module("ceawebsite",["ngRoute","ngSanitize"])
 var email
-var gif = document.getElementById("loadergif")
-gif = angular.element(gif)
+// var gif = document.getElementById("loadergif")
+// gif = angular.element(gif)
 x.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/",{
@@ -883,11 +883,11 @@ x.controller("events",function($scope,$http){
      $scope.el = angular.element('<p>hiii</p>')
      $scope.el = $scope.el[0].innerHTML
      console.log($scope.el)
-    var gif = document.getElementById("loadergif")
-    gif = angular.element(gif)
-    gif.css({
-        "display":"block"
-    })
+    // var gif = document.getElementById("loadergif")
+    // gif = angular.element(gif)
+    // gif.css({
+    //     "display":"block"
+    // })
     $http({
         method:'get',
         url:'events.php'
@@ -898,11 +898,11 @@ x.controller("events",function($scope,$http){
     //     console.log("te")
     //     te=te-1
     // }
-    var gif = document.getElementById("loadergif")
-    gif = angular.element(gif)
-    gif.css({
-        "display":"none"
-    })
+    // var gif = document.getElementById("loadergif")
+    // gif = angular.element(gif)
+    // gif.css({
+    //     "display":"none"
+    // })
     
         for(var i=0;i<r.data.length;i++){
             if(r.data[i].event=="STRUCTURAL DESIGN" || r.data[i].event=="AIR QUALITY CONTROL"){
