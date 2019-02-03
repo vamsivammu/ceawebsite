@@ -138,9 +138,9 @@ i{
                     <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#editprofileModal">edit profile</button> 
                     <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#changepasswordModal">change password</button>
  
-                    <!--<button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#registereventsModal">register for events</button>-->
-                    <!--<button type="button" class="btn btn-outline-success btn-round btn-lg"data-toggle="modal" data-target="#workshopregisterModal">register for workshops</button> -->
-                    <!--<button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#researchexpoModal">register for research expo</button>-->
+                    <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#registereventsModal">register for events</button>
+                    <button type="button" class="btn btn-outline-success btn-round btn-lg"data-toggle="modal" data-target="#workshopregisterModal">register for workshops</button>
+                    <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#researchexpoModal">register for research expo</button>
  
             </center>
             <br/>
@@ -276,14 +276,14 @@ i{
                             <li>The size of team should be minimum of 2 members except for Essay Writing and Potential Professor.</li>
                         </ol>
                         <div class="form-group">
-                            <select class="form-control" ng-model="testevent" ng-change="testchangeevent()">
-                                <option>Select an Event</option>
+                            <select class="form-control" ng-model="eventname" ng-change="testchangeevent()">
+                                <option disabled>Select an Event</option>
                                 <option ng-click="changeevent('Master Builder')">Master Builder</option>
                                 <option ng-click="changeevent('Prabandha')">Prabandha</option>
                                 <option ng-click="changeevent('Geo Genius')">Geo Genius</option>
                                 <option ng-click="changeevent('Concrete Challenge')">Concrete Challenge</option>
                                 <option ng-click="changeevent('Aquanomics')">Aquanomics</option>
-                                <option ng-click="changeevent('Bon Auto Routier')">Bon Auto Routier</option>
+                                <!-- <option ng-click="changeevent('Bon Auto Routier')">Bon Auto Routier</option> -->
                                 <option ng-click="changeevent('Essay')">Essay</option>
                                 <option ng-click="changeevent('Encode Steel')">Encode Steel</option>
                                 <option ng-click="changeevent('Debate')">Debate</option>
@@ -294,6 +294,9 @@ i{
                         
                     </div>
                     <div class="modal-footer">
+                            <div class="left-side">
+                                    <button name="submit2" ng-click="submitevent()" id="submit2" class="btn btn-success btn-link">Submit</button>
+                                </div>
                         <div class="right-side">
                             <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
                             </div>
@@ -404,14 +407,17 @@ i{
                             <p style="color:black">Payments are to be done with <strong>1 hour</strong> of registration to confirm your seat</p></b>
                             <br>
                             <div class="form-group">
-                                <select class="form-control">
-                                    <option>Select an Event</option>
-                                    <option ng-click="changeworkshop('Air Quality Control')">Air Quality Control</option>
-                                    <option ng-click="changeworkshop('Structural Design')">Structural Design</option>                                
+                                <select class="form-control" ng-model="workshop" ng-change="changeworkshop()">
+                                    <option disabled>Select an Event</option>
+                                    <option >Air Quality Control</option>
+                                    <option >Structural Design</option>                                
                                 </select>
                             </div>
                     </div>
                     <div class="modal-footer">
+                            <div class="left-side">
+                                    <button name="submit2" ng-click="submitworkshop()" id="submit2" class="btn btn-success btn-link">Submit</button>
+                                </div>
                         <div class="right-side">
                             <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
                             </div>

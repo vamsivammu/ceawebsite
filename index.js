@@ -1174,25 +1174,26 @@ x.controller("profile",function($scope,$http){
     }
    $scope.testchangeevent=function(){
        console.log($scope.testevent)
-       var m = document.getElementById("registereventsModal")
-        m = angular.element(m)
-         m.modal('hide')
-         var m1 = document.getElementById("multieventregisterModal")
-         m1 = angular.element(m1)
-         m1.modal('show')
+     
          
    }
-    $scope.changeevent=function(eve){
-        $scope.eventname= eve
-        var m = document.getElementById("registereventsModal")
-        m = angular.element(m)
-         m.modal('hide')
-
+   $scope.submitevent=function(){
+    var m = document.getElementById("registereventsModal")
+    m = angular.element(m)
+     m.modal('hide')
+     var m1 = document.getElementById("multieventregisterModal")
+     m1 = angular.element(m1)
+     m1.modal('show')
+   }
+   $scope.submitworkshop=function(){
+    var m = document.getElementById("workshopregisterModal")
+    m = angular.element(m)
+     m.modal('hide')
+     var m1 = document.getElementById("multiworkshopregisterModal")
+     m1 = angular.element(m1)
+     m1.modal('show')
+   }
     
-    var m1 = document.getElementById("multieventregisterModal")
-    m1 = angular.element(m1)
-    m1.modal('show')
-    }
 
     
     $scope.mem2change= function(){
@@ -1378,18 +1379,9 @@ x.controller("profile",function($scope,$http){
     
     }
 
-    $scope.changeworkshop=function(workshop){
+    $scope.changeworkshop=function(){
 
-        $scope.workshop = workshop
-
-        var n = document.getElementById("workshopregisterModal")
-        n = angular.element(n)
-        n.modal('hide')
-
-        var o = document.getElementById("multiworkshopregisterModal")
-        o = angular.element(o)
-        o.modal("show")
-        $scope.deg="B.Tech"
+       console.log($scope.workshop)
 
     }
 
