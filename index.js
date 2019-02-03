@@ -1282,7 +1282,7 @@ x.controller("profile",function($scope,$http){
                                 mod.modal('hide')
                                 bo.loadingModal('hide')
                                 alert("successfully registered for "+$scope.eventname +" event")
-        
+                                window.location.reload()
                             }else if(r.data.status==-1){
                                 
                                 bo.loadingModal('hide')
@@ -1326,7 +1326,7 @@ x.controller("profile",function($scope,$http){
                                 mod.modal('hide')
                                 bo.loadingModal('hide')
                                 alert("successfully registered for "+$scope.eventname +" event")
-        
+                                window.location.reload()
                             }else if(r.data.status==-1){
                                 
                                 bo.loadingModal('hide')
@@ -1371,7 +1371,7 @@ x.controller("profile",function($scope,$http){
                             mod.modal('hide')
                             bo.loadingModal('hide')
                             alert("successfully registered for "+$scope.eventname +" event")
-    
+                            window.location.reload()
                         }else if(r.data.status==-1){
                             
                             bo.loadingModal('hide')
@@ -1412,7 +1412,7 @@ x.controller("profile",function($scope,$http){
                         mod.modal('hide')
                         bo.loadingModal('hide')
                         alert("successfully registered for "+$scope.eventname +" event")
-
+                        window.location.reload()
                     }else if(r.data.status==-1){
                         
                         bo.loadingModal('hide')
