@@ -47,8 +47,12 @@
         $s1 = strpos($mem1det['events'],$event);
         $s2 = strpos($mem2det['events'],$event);
         $s3 = strpos($mem3det['events'],$event);
-        
-        if (($s1 !== false) or ($s2 !== false) or ($s3 !== false)){
+        if(($mem1id!=$mem1det['ID']) or ($mem2id!=$mem2det['ID']) or ($mem3id!=$mem3det['ID'])){
+            $resp['status']=-3;
+        }else{
+
+    
+            if (($s1 !== false) or ($s2 !== false) or ($s3 !== false)){
                         
             $resp['status']  = -1;
 
@@ -94,7 +98,7 @@
 
 
         }
-
+    }
 
     }
 
