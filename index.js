@@ -1087,6 +1087,7 @@ x.controller("profile",function($scope,$http){
     $scope.passwordpattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$/;
     var idpatt = /CEA19N\d{1,}$/
     // console.log(localStorage.getItem())
+    $scope.eventname="Select an Event"
     if(localStorage.getItem("loggedin")){
         $http({
             method:"post",
@@ -1102,7 +1103,8 @@ x.controller("profile",function($scope,$http){
                 $scope.email = r.data.email
                 $scope.clgname = r.data.clgname
                 $scope.payment = r.data.payment
-                $scope.regworkshops=r.data.workshops
+                $scope.regworkshops=r.data.workshops.split(",")
+                $scope.regworkshops.splice(0,1)
                 $scope.structural = r.data.structural
                 $scope.air = r.data.air
                 $scope.festfee = r.data.festfee
@@ -1116,6 +1118,11 @@ x.controller("profile",function($scope,$http){
                 }else if($scope.gender="F"){
                     $scope.imgsrc="images/profilePics/femaleprofile.jpg"
                 }
+                $scope.regisevents = r.data.regisevents.split(",")
+                $scope.regisevents.splice(0,1)
+            // console.log($scope.regisevents)
+            // console.log($scope.regworkshops)
+            
             })
 
             $http({

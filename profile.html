@@ -144,7 +144,17 @@ i{
  
             </center>
             <br/>
-            
+            <hr>
+            <h2 style="text-align:center">Registered Events</h2>
+            <hr>
+           <div class="row justify-content-center">
+                <div ng-repeat="regis in regisevents" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img style="width:80%;height:auto" src="imgs/events/{{regis}}.jpg">
+                    <h3 >{{regis}}</h3>
+
+                </div>
+           </div>
+           <br> 
         </div>
 
 
@@ -275,18 +285,22 @@ i{
                             <li>Enter the CEA IDs of your Team-mates.</li>
                             <li>The size of team should be minimum of 2 members except for Essay Writing and Potential Professor.</li>
                         </ol>
+                        <br>
+                        <p style="color:#868e96">Select an Event: <font color="red"> *</font></p>
+                           
                         <div class="form-group">
+                               
                             <select class="form-control" ng-model="eventname" ng-change="testchangeevent()">
-                                <option disabled>Select an Event</option>
+                                <!-- <option >Select an Event</option> -->
                                 <option ng-click="changeevent('Master Builder')">Master Builder</option>
-                                <option ng-click="changeevent('Prabandha')">Prabandha</option>
+                                <!-- <option ng-click="changeevent('Prabandha')">Prabandha</option> -->
                                 <option ng-click="changeevent('Geo Genius')">Geo Genius</option>
                                 <option ng-click="changeevent('Concrete Challenge')">Concrete Challenge</option>
                                 <option ng-click="changeevent('Aquanomics')">Aquanomics</option>
                                 <!-- <option ng-click="changeevent('Bon Auto Routier')">Bon Auto Routier</option> -->
-                                <option ng-click="changeevent('Essay')">Essay</option>
+                                <!-- <option ng-click="changeevent('Essay')">Essay</option> -->
                                 <option ng-click="changeevent('Encode Steel')">Encode Steel</option>
-                                <option ng-click="changeevent('Debate')">Debate</option>
+                                <!-- <option ng-click="changeevent('Debate')">Debate</option> -->
                                 <option ng-click="changeevent('SDC')">SDC</option>
                                 <option ng-click="changeevent('Potential Professor')">Potential Professor</option>                                
                             </select>
@@ -586,7 +600,7 @@ i{
                                 <p ng-hide="yearisvalid" style="color:red">{{yearerr}}</p>
                             </div>
                             <br><h4 style="text-align:center; color:#6ec7e0" >registration details</h4><br>
-                            <p style="color:#868e96">Appeared for gate 2016 <font color="red"> *</font></p>
+                            <p style="color:#868e96">Appeared for gate 2019 <font color="red"> *</font></p>
                             <div class="form-group">
                                 <select ng-model="gate" class="form-control">
                                     <option selected ng-click="changeoptgate('Yes')">Yes</option>

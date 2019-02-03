@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $resp['gender']=$gender;
     $resp['email']=$email;
     $resp['workshops'] = $a['workshops'];
-    
+    $resp['regisevents'] = $a['events'];
     $stmt2 = $con1->prepare("SELECT * FROM userpayment WHERE email=?;");
     $stmt2->bind_param("s",$e);
     $e = $email;
