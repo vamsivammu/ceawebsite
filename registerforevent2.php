@@ -12,7 +12,6 @@
         @$mem2 = (string)$dd->mem2;
         @$mem3 = (string)$dd->mem3;
         @$mem4 = (string)$dd->mem4;
-        
         // @$mem5 = (string)$dd->mem5;
         array_push($stus,$mem1);
         array_push($stus,$mem2);
@@ -29,6 +28,8 @@
         $stmt3->bind_param("i",$mem3id);
         $stmt4 = $con->prepare("SELECT * FROM user2019 WHERE ID=?;");
         $stmt4->bind_param("i",$mem4id);
+        // $stmt5 = $con->prepare("SELECT * FROM user2019 WHERE ID=?;");
+        // $stmt5->bind_param("i",$mem5id);
         
         $mem1id= (int)substr($mem1,6);
         $mem2id= (int)substr($mem2,6);
@@ -48,18 +49,19 @@
         $stmt4->execute();
         $mem4det = $stmt4->get_result()->fetch_assoc();
         
+        // $stmt5->execute();
+        // $mem5det = $stmt5->get_result()->fetch_assoc();
         
         $s1 = strpos($mem1det['events'],$event);
         $s2 = strpos($mem2det['events'],$event);
         $s3 = strpos($mem3det['events'],$event);
         $s4 = strpos($mem4det['events'],$event);
+        // $s5 = strpos($mem5det['events'],$event);
 
-        if(($mem1id!=$mem1det['ID']) or $mem4id!=$mem4det['ID']) or ($mem2id!=$mem2det['ID']) or ($mem3id!=$mem3det['ID'])){
+        if(($mem1id!=$mem1det['ID']) or ($mem4id!=$mem4det['ID']) or ($mem2id!=$mem2det['ID']) or ($mem3id!=$mem3det['ID'])){
             $resp['status']=-3;
         }else{
-
-
-        if (($s1 !== false) or ($s2 !== false) or ($s3 !== false) or ($s4 !== false)){
+        if (($s1 !== false) or ($s2 !== false) or ($s3 !== false) or ($s4 !== false) ){
                         
             $resp['status']  = -1;
 
@@ -88,6 +90,10 @@
             $m4eve = $mem4det['events'].','.$event;
 
             
+            // $upd5 = $con1->prepare("UPDATE `user2019` SET `events`=? WHERE ID=?;");
+            // $upd5->bind_param("si",$m5eve,$m5id);
+            // $m5id = $mem5id;
+            // $m5eve = $mem5det['events'].','.$event;
 
             $eveins = $con2->prepare("INSERT INTO events (event,captain,vicecaptain,3rdmem,4thmem)  VALUES(?,?,?,?,?);");
             $eveins->bind_param("sssss",$evename,$m1,$m2,$m3,$m4);
@@ -96,9 +102,22 @@
             $m2 = (string)$m2id;
             $m3 = (string)$m3id;
             $m4 = (string)$m4id;
+            // $m5 = (string)$m5id;
             
                         
-
+            $resp['a'] = $m1;
+            $resp['b'] = $m2;
+            $resp['c'] = $m3;
+            $resp['d'] = $m4;
+            // $resp['e'] = $m5;
+            $resp['f'] = $evename;
+            $resp['g'] = $m1eve;
+            $resp['h'] = $m2eve;
+            $resp['i'] = $m3eve;
+            $resp['j'] = $m4eve;
+            // $resp['k'] = $m5eve;
+            
+            
             if($upd1->execute() and $upd2->execute() and $upd3->execute() and $upd4->execute() and $eveins->execute()){
                $resp['status'] = 1;
 
@@ -111,7 +130,6 @@
 
         }
     }
-
 
     }
 

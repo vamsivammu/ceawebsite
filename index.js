@@ -137,8 +137,91 @@ x.controller("contactus",function($scope){
         "name":"Sreedevi N",
         "contact":"9500188432",
         "email":"ceaoutreach@gmail.com"
+    },
+    {
+        "pos":"Events",
+        "name":"Kranthi Kumar",
+        "contact":"9500183272",
+        "email":"kranthipanduru333@gmail.com"
+    },
+    {
+        "pos":"Events",
+        "name":"Hari Krishna",
+        "contact":"8680902320",
+        "email":"harikrishna.thummalapelly@gmail.com"
+    },
+    {
+        "pos":"Finance",
+        "name":"Jawahar Rajasekar",
+        "contact":"9976232767",
+        "email":"jawaharrajasekar002@gmail.com"
+    },
+    {
+        "pos":"Finance",
+        "name":"Vinayathi",
+        "contact":"9500182979",
+        "email":"vinayathiyerranagu318@gmail.com"
+    },
+    {
+        "pos":"Finance",
+        "name":"Srikanth Malyala",
+        "contact":"9092929824",
+        "email":"malyala2srikanth@gmail.com"
+    },
+    {
+        "pos":"FR",
+        "name":"Kandukuri Rohit",
+        "contact":"9500191097",
+        "email":"samuelrohit95@gmail.com"
+    },
+    {
+        "pos":"FR",
+        "name":"B.Sadguna Pavan Kumar ",
+        "contact":"7010262864",
+        "email":"sadgunapavan@gmail.com"
+    },
+    {
+        "pos":"Nirmaan",
+        "name":"K.Gireesh",
+        "contact":"8639185163",
+        "email":"gireeshsai000@gmail.com"
+    },
+    {
+        "pos":"Nirmaan",
+        "name":"U.S.K.Vaibhav",
+        "contact":"7013303862",
+        "email":"usk.vaibhav@gmail.com "
+    },
+    {
+        "pos":"Projects",
+        "name":"Anusha",
+        "contact":"8428317161",
+        "email":"vusirikalaanusha@gmail.com"
+    },
+    {
+        "pos":"QMS",
+        "name":"Sibbala Bhavana",
+        "contact":"9500193321",
+        "email":"princesschitti2012@gmail.com"
+    },
+    {
+        "pos":"Sponsorship & PR",
+        "name":"Srilok Sagar",
+        "contact":"9177997961",
+        "email":"srilok.sagar.3@gmail.com"
+    },
+    {
+        "pos":"Sponsorship & PR",
+        "name":"B.Yukti",
+        "contact":"7087146594",
+        "email":"bishambu20@gmail.com"
+    },
+    {
+        "pos":"Webops",
+        "name":"Chandrashekhar",
+        "contact":"9057995595",
+        "email":"csmathuria03@gmail.com"
     }
-   
     
     
 ]
