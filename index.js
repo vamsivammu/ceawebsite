@@ -28,6 +28,9 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/accommodation",{
         templateUrl:"accommodation.html",
         controller:"accom"
+    }).when("/confirmation",{
+        templateUrl:"testing.html",
+        controller:"confirm"
     }).when("/contactus",{
         templateUrl:"contactus.html",
         controller:"contactus"
@@ -256,7 +259,7 @@ console.log("inside")
 })
 
 x.controller("confirm",function($scope,$http){
-    var jsondata = $location.search.jsondata;
+    // var jsondata = $location.search.jsondata;
     $http({
         method:'post',
         url:'http://ceaiitm.org/2019/ceawebsite/testing.php',
