@@ -255,7 +255,20 @@ console.log("inside")
 
 })
 
-
+x.controller("confirm",function($scope,$http){
+    var jsondata = $location.search.jsondata;
+    $http({
+        method:'post',
+        url:'http://ceaiitm.org/2019/ceawebsite/testing.php',
+        data:{
+            name:'vamsi',
+            pass:'vamsi'
+        },
+        headers:{'Content-Type':'application/x-form-www-urlencoded'}
+    }).then(function(r){
+        console.log(r)
+    })
+})
 
 x.controller("projects",function($scope){
     console.log("projects")
