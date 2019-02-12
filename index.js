@@ -260,14 +260,19 @@ console.log("inside")
 
 x.controller("confirm",function($scope,$http){
     // var jsondata = $location.search.jsondata;
+    $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+    $http.defaults.useXDomain = true
+    // Delete the Requested With Header
+    delete $http.defaults.headers.common['X-Requested-With'];
+
     $http({
         method:'post',
         url:'http://ceaiitm.org/2019/ceawebsite/testing.php',
         data:{
             name:'vamsi',
             pass:'vamsi'
-        },
-        headers:{'Content-Type':'application/x-form-www-urlencoded'}
+        }
+       
     }).then(function(r){
         console.log(r)
     })
