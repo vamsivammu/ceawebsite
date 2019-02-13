@@ -28,6 +28,9 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/accommodation",{
         templateUrl:"accommodation.html",
         controller:"accom"
+    }).when("/confirmation",{
+        templateUrl:"testing.html",
+        controller:"confirm"
     }).when("/contactus",{
         templateUrl:"contactus.html",
         controller:"contactus"
@@ -117,7 +120,7 @@ x.controller("contactus",function($scope){
     {
         "pos":"Secretary",
         "name":"Chethana",
-        "contact":"9940125045",
+        "contact":"8790262727",
         "email":"chetanakumar7@gmail.com"
     },
     {
@@ -127,13 +130,13 @@ x.controller("contactus",function($scope){
         "email":"svaishnavkumar@gmail.com"
     },
     {
-        "pos":"M & SR",
-        "name":"Sai Bhargav",
+        "pos":"Media & Student Relations",
+        "name":"S Sai Bhargav",
         "contact":"8096159615",
         "email":"ceaoutreach@gmail.com"
     },
     {
-        "pos":"M & SR",
+        "pos":"Media & Student Relations",
         "name":"Sreedevi N",
         "contact":"9500188432",
         "email":"ceaoutreach@gmail.com"
@@ -149,6 +152,24 @@ x.controller("contactus",function($scope){
         "name":"Hari Krishna",
         "contact":"8680902320",
         "email":"harikrishna.thummalapelly@gmail.com"
+    },
+    {
+        "pos":"Design & Creatives",
+        "name":"Regulavalasa Prashanth",
+        "contact":"9500181654",
+        "email":"prasha1436@gmail.com"
+    },
+    {
+        "pos":"Design & Creatives",
+        "name":"Praveen Paramata",
+        "contact":"8608231113",
+        "email":"praveen.p9920@gmail.com"
+    },
+    {
+        "pos":"Design & Creatives",
+        "name":"Vishwa Vignan",
+        "contact":"9494156807",
+        "email":"phanivenkule@gmail.com"
     },
     {
         "pos":"Finance",
@@ -237,7 +258,27 @@ console.log("inside")
 
 })
 
+x.controller("confirm",function($scope,$http){
+    // var jsondata = $location.search.jsondata;
+    // $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+    // $http.defaults.useXDomain = true
+    // // Delete the Requested With Header
+    // delete $http.defaults.headers.common['X-Requested-With'];
 
+    $http({
+        method:'post',
+        url:'http://ceaiitm.org/2019/ceawebsite/testing.php',
+        data:{
+            name:'vamsi',
+            pass:'vammuvamsi64'
+        },
+        headers:{"Access-Control-Allow-Headers":"Content-Type,Access-Control-Allow-Origin","Access-Control-Allow-Origin":true,"Content-Type":"application/x-www-form-urlencoded"}
+        
+       
+    }).then(function(r){
+        console.log(r)
+    })
+})
 
 x.controller("projects",function($scope){
     console.log("projects")
@@ -1164,6 +1205,9 @@ x.controller("loginverifycontroller",function($scope,$http,$routeParams){
 })
 
 x.controller("profile",function($scope,$http){
+    $scope.mem2=""
+    $scope.mem3=""
+    $scope.mem4=""
     $scope.namepattern=/^[a-zA-Z ]{3,}$/;
     $scope.mobilepattern = /^[0-9]{10,10}$/;
     $scope.addpatt=/^[a-zA-Z ,-/]{2,}$/
@@ -1392,7 +1436,127 @@ x.controller("profile",function($scope,$http){
                 }else{
                     console.log($scope.mem2isvalid,$scope.mem3isvalid,$scope.mem4isvalid,$scope.mem5isvalid)
                     
-                    if($scope.mem2isvalid && $scope.mem3isvalid && $scope.mem4isvalid){
+                    if($scope.eventname=="Geo Genius"){
+                        
+                        if($scope.mem2isvalid){
+
+                            if($scope.mem3.length==0 && $scope.mem4.length==0){
+                                $http({
+                                    method:'post',
+                                    url:'registerforevent2.php',
+                                    data:{
+                                        mem1:$scope.ceaid,
+                                        mem2:$scope.mem2,
+                                        mem3:$scope.mem3,
+                                        mem4:$scope.mem4,
+                                        event:$scope.eventname
+                                    },
+                                    headers:{'Content-Type':'application/x-form-www-urlencoded'}
+                                }).then(function(r){
+                                    if(r.data.status==1){
+                                        mod.modal('hide')
+                                        bo.loadingModal('hide')
+                                        alert("successfully registered for "+$scope.eventname +" event")
+                                        window.location.reload()
+                                    }else if(r.data.status==-1){
+                                        
+                                        bo.loadingModal('hide')
+                                        alert("one of your teammates has been already registered")
+                                    }else if(r.data.status==-3){
+                                        bo.loadingModal('hide')
+                                        alert("One of your teammates ID is not found")
+                                    }
+                                    else{
+                                        
+                                        bo.loadingModal('hide')
+                                        alert("Please try again after some time")
+                                        window.location.pathname="/2019/ceawebsite/profile"
+                                    }
+                                })
+                            }else if($scope.mem3.length==0){
+                                if($scope.mem4isvalid){
+                                    $http({
+                                        method:'post',
+                                        url:'registerforevent3.php',
+                                        data:{
+                                            mem1:$scope.ceaid,
+                                            mem2:$scope.mem2,
+                                            mem3:$scope.mem4,
+                                            event:$scope.eventname
+                                        },
+                                        headers:{'Content-Type':'application/x-form-www-urlencoded'}
+                                    }).then(function(r){
+                                        if(r.data.status==1){
+                                            mod.modal('hide')
+                                            bo.loadingModal('hide')
+                                            alert("successfully registered for "+$scope.eventname +" event")
+                                            window.location.reload()
+                                        }else if(r.data.status==-1){
+                                            
+                                            bo.loadingModal('hide')
+                                            alert("one of your teammates has been already registered")
+                                        }else if(r.data.status==-3){
+                                            bo.loadingModal('hide')
+                                            alert("One of your teammates ID is not found")
+                                        }
+                                        else{
+                                            
+                                            bo.loadingModal('hide')
+                                            alert("Please try again after some time")
+                                            window.location.pathname="/2019/ceawebsite/profile"
+                                        }
+                                    })
+                                }else{
+                                    
+                        bo.loadingModal('hide')
+                        alert("One of the IDs is invalid or empty")
+                                }
+                            }else if($scope.mem4.length==0){
+                                if($scope.mem3isvalid){
+                                    $http({
+                                        method:'post',
+                                        url:'registerforevent3.php',
+                                        data:{
+                                            mem1:$scope.ceaid,
+                                            mem2:$scope.mem2,
+                                            mem3:$scope.mem3,
+                                            event:$scope.eventname
+                                        },
+                                        headers:{'Content-Type':'application/x-form-www-urlencoded'}
+                                    }).then(function(r){
+                                        if(r.data.status==1){
+                                            mod.modal('hide')
+                                            bo.loadingModal('hide')
+                                            alert("successfully registered for "+$scope.eventname +" event")
+                                            window.location.reload()
+                                        }else if(r.data.status==-1){
+                                            
+                                            bo.loadingModal('hide')
+                                            alert("one of your teammates has been already registered")
+                                        }else if(r.data.status==-3){
+                                            bo.loadingModal('hide')
+                                            alert("One of your teammates ID is not found")
+                                        }
+                                        else{
+                                            
+                                            bo.loadingModal('hide')
+                                            alert("Please try again after some time")
+                                            window.location.pathname="/2019/ceawebsite/profile"
+                                        }
+                                    })
+                                }else{
+                                    
+                        bo.loadingModal('hide')
+                        alert("One of the IDs is invalid or empty")
+                                }
+                            }
+
+                        }else{
+                            bo.loadingModal('hide')
+                            alert("One of the IDs is invalid or empty")
+                        }
+                    }
+                    else if($scope.mem2isvalid && $scope.mem3isvalid && $scope.mem4isvalid){
                         $http({
                             method:'post',
                             url:'registerforevent2.php',
