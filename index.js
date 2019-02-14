@@ -50,7 +50,7 @@ x.config(function($routeProvider,$locationProvider){
         templateUrl:"comingsoon.html",
         controller:"comingsoon"
     }).when("/workshops",{
-        templateUrl:"workshops.html",
+        templateUrl:"comingsoon.html",
         controller:"comingsoon"
     }).when("/contact",{
         templateUrl:"contact.html",
