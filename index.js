@@ -50,7 +50,7 @@ x.config(function($routeProvider,$locationProvider){
         templateUrl:"comingsoon.html",
         controller:"comingsoon"
     }).when("/workshops",{
-        templateUrl:"comingsoon.html",
+        templateUrl:"workshops.html",
         controller:"comingsoon"
     }).when("/contact",{
         templateUrl:"contact.html",
@@ -272,7 +272,7 @@ x.controller("confirm",function($scope,$http){
             name:'vamsi',
             pass:'vammuvamsi64'
         },
-        headers:{"Access-Control-Allow-Headers":"Content-Type,Access-Control-Allow-Origin","Access-Control-Allow-Origin":true,"Content-Type":"application/x-www-form-urlencoded"}
+        // headers:{"Access-Control-Allow-Headers":"Content-Type,Access-Control-Allow-Origin","Access-Control-Allow-Origin":true,"Content-Type":"application/x-www-form-urlencoded"}
         
        
     }).then(function(r){
