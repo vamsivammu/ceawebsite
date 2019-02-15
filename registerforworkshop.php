@@ -9,10 +9,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $dd=json_decode($d);
     @$yr = (string)$dd->yr;
     @$stream = (string)$dd->stream;
-    @$regwork = (string)$dd->workshops;
+    // @$regwork = (string)$dd->workshops;
     @$curwork=(string)$dd->curwork;
     @$idd = (string)$dd->id;
-    $exists1 = strpos($regwork, $curwork);
+    $stmt5 = $con3->prepare("SELECT * FROM user2019 WHERE email=?;");
+    $stmt5->bind_param("s",$regem);
+    $regem = $_SESSION['loggeduseremail'];
+    $stmt5->execute();
+    $j = $stmt5->get_result()->fetch_assoc();
+    $exists1 = strpos($j['workshops'], $curwork);
+    
     if($exists1!==false){
         $resp['status'] =-1;
 
@@ -30,10 +36,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             $capid=$idd;
             $yer = $yr;
             $stre = $stream;
-            
+            // $resp['a'] = $regwork;
+            // $resp['b'] = $curwork;
             $stmt3 = $con1->prepare("UPDATE `user2019` SET `workshops`=? WHERE ID=?;");
             $stmt3->bind_param("si",$even,$ii);
-            $even = $regwork.','.$curwork;
+            $even = $j['workshops'].','.$curwork;
             $ii = (int)$idd;
 
             if($stmt2->execute() and $stmt3->execute()){

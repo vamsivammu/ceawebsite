@@ -139,7 +139,7 @@ i{
                     <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#changepasswordModal">change password</button>
  
                     <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#registereventsModal">register for events</button>
-                    <!-- <button type="button" class="btn btn-outline-success btn-round btn-lg"data-toggle="modal" data-target="#workshopregisterModal">register for workshops</button> -->
+                    <button type="button" class="btn btn-outline-success btn-round btn-lg"data-toggle="modal" data-target="#workshopregisterModal">register for workshops</button>
                     <button type="button" class="btn btn-outline-success btn-round btn-lg" data-toggle="modal" data-target="#researchexpoModal">register for research expo</button>
  
             </center>
@@ -415,16 +415,20 @@ i{
                         </ol>
                             <p style="color:black">Amount needed to be paid is</p>
                            
-                            <p style="color:black" ng-show="payment!==1">Fest registration Fee : &#x20B9 300</p>
+                            <p style="color:black" ng-show="payment!==1">Fest registration Fee : &#x20B9 500</p>
                             
                             <b><p style="color:black">Workshop registration fee : &#x20B9 500 per workshop</p>
                             <p style="color:black">Payments are to be done with <strong>1 hour</strong> of registration to confirm your seat</p></b>
                             <br>
                             <div class="form-group">
+                                <p>Select a Workshop:</p>
                                 <select class="form-control" ng-model="workshop" ng-change="changeworkshop()">
                                     <option disabled>Select an Event</option>
-                                    <option >Air Quality Control</option>
-                                    <option >Structural Design</option>                                
+                                    <option >STAAD PRO Workshop</option>
+                                    <option >3D Printable Concrete</option>                                
+                                    <option >GIS Workshop</option>                                
+                                    <option >Building Automation</option>                                
+                                
                                 </select>
                             </div>
                     </div>

@@ -50,8 +50,8 @@ x.config(function($routeProvider,$locationProvider){
         templateUrl:"comingsoon.html",
         controller:"comingsoon"
     }).when("/workshops",{
-        templateUrl:"comingsoon.html",
-        controller:"comingsoon"
+        templateUrl:"workshops.html",
+        controller:"workshops"
     }).when("/contact",{
         templateUrl:"contact.html",
         controller:"contact"
@@ -75,6 +75,52 @@ x.run(function($rootScope, $templateCache) {
 var email;
 x.controller("comingsoon",function(){
 
+})
+x.controller("workshops",function($scope){
+
+    $scope.showbentley=function(){
+        var bent = document.getElementById("bent");
+        bent = angular.element(bent);
+        bent.modal("show");
+    }
+
+    $scope.paidworkshops = function(){
+        var q = document.getElementById("paidworkshops");
+        q = angular.element(q)
+        if(q.hasClass("selected")){
+            console.log("1");
+        }else{
+            var r = document.getElementById("freeworkshops");
+            r = angular.element(r);
+            r.removeClass("selected");
+            q.addClass("selected");
+            var det = document.getElementById("staadpro");
+            det = angular.element(det);
+            var fdet = document.getElementById("fdet");
+            fdet = angular.element(fdet);
+            fdet.removeClass("activecontent");
+            det.addClass("activecontent");
+        }
+    }
+    
+    $scope.freeworkshops = function(){
+        var q = document.getElementById("freeworkshops");
+        q = angular.element(q)
+        if(q.hasClass("selected")){
+            console.log("1");
+        }else{
+            var r = document.getElementById("paidworkshops");
+            r = angular.element(r);
+            var det = document.getElementById("staadpro");
+            det = angular.element(det);
+            var fdet = document.getElementById("fdet");
+            fdet = angular.element(fdet);
+            r.removeClass("selected");
+            det.removeClass("activecontent");
+            fdet.addClass("activecontent");
+            q.addClass("selected");
+        }
+    }
 })
 x.controller("home",function($scope){
 
@@ -1214,7 +1260,7 @@ x.controller("profile",function($scope,$http){
     $scope.passwordpattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$/;
     var idpatt = /CEA19N\d{1,}$/
     // console.log(localStorage.getItem())
-    $scope.eventname="Select an Event"
+    // $scope.eventname="Select an Event"
     if(localStorage.getItem("loggedin")){
         $http({
             method:"post",
@@ -1232,6 +1278,7 @@ x.controller("profile",function($scope,$http){
                 $scope.payment = r.data.payment
                 $scope.regworkshops=r.data.workshops.split(",")
                 $scope.regworkshops.splice(0,1)
+                
                 $scope.structural = r.data.structural
                 $scope.air = r.data.air
                 $scope.festfee = r.data.festfee
@@ -1248,7 +1295,7 @@ x.controller("profile",function($scope,$http){
                 $scope.regisevents = r.data.regisevents.split(",")
                 $scope.regisevents.splice(0,1)
             // console.log($scope.regisevents)
-            // console.log($scope.regworkshops)
+            console.log($scope.regworkshops)
             
             })
 
@@ -1312,20 +1359,31 @@ x.controller("profile",function($scope,$http){
          
    }
    $scope.submitevent=function(){
-    var m = document.getElementById("registereventsModal")
-    m = angular.element(m)
-     m.modal('hide')
-     var m1 = document.getElementById("multieventregisterModal")
-     m1 = angular.element(m1)
-     m1.modal('show')
+       console.log($scope.eventname)
+       if($scope.eventname==undefined || $scope.eventname.length==0){
+           alert("Please select one event")
+       }else{
+        var m = document.getElementById("registereventsModal")
+        m = angular.element(m)
+         m.modal('hide')
+         var m1 = document.getElementById("multieventregisterModal")
+         m1 = angular.element(m1)
+         m1.modal('show')
+       }
+
    }
    $scope.submitworkshop=function(){
-    var m = document.getElementById("workshopregisterModal")
-    m = angular.element(m)
-     m.modal('hide')
-     var m1 = document.getElementById("multiworkshopregisterModal")
-     m1 = angular.element(m1)
-     m1.modal('show')
+       if($scope.workshop == undefined || $scope.workshop.length==0){
+           alert("Please select one workshop")
+       }else{
+        var m = document.getElementById("workshopregisterModal")
+        m = angular.element(m)
+         m.modal('hide')
+         var m1 = document.getElementById("multiworkshopregisterModal")
+         m1 = angular.element(m1)
+         m1.modal('show')
+       }
+
    }
     
 
@@ -1694,6 +1752,11 @@ x.controller("profile",function($scope,$http){
     
 
     $scope.registerforworkshop=function(){
+        if($scope.deg==undefined || $scope.curyear==undefined ||$scope.deg.length==0 || $scope.curyear.length==0){
+            alert("One of the input fields is empty")
+        }else{
+
+        
         var bo = document.getElementsByTagName("body")
         bo = angular.element(bo)
         bo.loadingModal({
@@ -1714,6 +1777,7 @@ x.controller("profile",function($scope,$http){
             },
             headers:{'Content-Type':'application/x-form-www-urlencoded'}
         }).then(function(r){
+            console.log(r)
             if(r.data.status==1){
                 bo.loadingModal('hide')
                 mo.modal('hide')
@@ -1731,7 +1795,7 @@ x.controller("profile",function($scope,$http){
             }
         })
 
-
+    }
 
     }
     

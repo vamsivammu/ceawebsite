@@ -15,15 +15,177 @@
     }
 
     .poster:hover{
-        width:34%;
+        width:32%;
     }
+
+    .workshoptype{
+         cursor: pointer;
+        width:100%;
+        color:black;
+        transition:1s;
+    }
+
+    .selected.workshoptype{
+        width: 100%;
+        color:blanchedalmond;
+        background-color: cornflowerblue;
+    }
+
+    .workshoptype:hover{
+        background-color:cornflowerblue;
+
+    }
+    .workshopdetails{
+        display: none;
+
+    }
+    .workshopdetails p{
+        font-size: 20px;
+    }
+    .workshopdetails h3{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .workshopdetails h4{
+        font-size: 28px;
+        font-weight: 200;
+    }
+    .workshopdetails.activecontent{
+        display: block;
+    }
+    
 </style>
-<div>
+<div style="background-color:white;min-height:100%;">
 
     <div class="workshopposter">
-        <img class="poster" src="images/workshop.jpg">
+        <img class="poster" ng-click="showbentley()" src="images/workshop.jpg">
     </div>
     <div class="workshopcontent">
-
+        <hr>
+        <div class=" row justify-content-around">
+            <div id="paidworkshops" class="col-sm-5 workshoptype selected" ng-click="paidworkshops()">
+                <h2 style="text-align:center;" ><b>Paid Workshops</b></h2>
+            </div>
+            <div id="freeworkshops" class="col-sm-5 workshoptype" ng-click="freeworkshops()">
+                <h2 style="text-align:center;"><b>Free Workshops</b></h2>
+            </div>
+            
+        </div>
+        <hr>
+        <div class="" >
+            <div id="staadpro" class="container workshopdetails activecontent">
+                <h3 style="text-align:center;">Staad Pro Workshop</h3>
+                <p >1.) Basic Intoduction on STAAD PRO</p>
+                <p>2.) Design of a multistoreyed building</p>
+                <p>3.) Assigning load causes to the structure.Dead load,Live load(Self weight of the structure,wind load,snow load,crane load etc)</p>
+                <p>4.) Analysis of the Building(SFD,BMD and Seismic Analysis)</p>
+                <p>5.) Bring your own laptops (64-bit processor only)</p>
+                <p>6.) The fee for this workshop is Rs.500 per person</p>
+            </div>
+            <div id = "fdet" class="workshopdetails">
+                <div class="row justify-content-around" >
+                    <div class="col-sm-4" >
+                        <h4 style="text-align:center"><b>3D Printable Concrete</b></h4>
+                        <hr>
+                        <p>1. Different techniques in digital fabrication that can be applied in construction</p>
+                        <p>2. Advantages and applications</p>
+                        <p>3. Examples and construction sequence of  some 3D printed structure</p>
+                        <p>4. Research at IIT Madras</p>
+                        
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <h4 style="text-align:center"><b>GIS Workshop</b></h4>
+                        <hr>
+                        <p>Introduction to GIS (Geographical information system) and applications</p>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <h4 style="text-align:center"><b>Building Automation</b></h4>
+                        <hr>
+                        <p>Trends of Automation in Civil Engineering (lecture)
+                            and
+                            Demonstration of automated modular construction</p>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
     </div>
 </div>
+
+<div class="modal fade" id="bent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="text-align:center;" id="exampleModalLabel">Bentley Workshop FAQs</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 style="text-align:center;"><b>Staad Pro Workshop by Bentley</b></h3>
+<b>
+1.	Who can participate in these workshops?</b>
+<p>
+This workshop is recommended to be taken up by Civil Engineering students who are currently in 2nd year or above and interested students currently enrolled for MTech in Civil Engineering.
+</p>
+<b>
+2.	What are the requirements for the workshops?
+</b>
+<p>
+Students are requested to bring their laptops(64-bit processor mandatory) along for the workshop. The training software and other necessary learning aids will be distributed at the venue.
+</p>
+<b>
+3.	What will be the duration of the workshops?
+</b>
+<p>The workshop will be conducted in the morning (check the fest schedule) on the said days  **
+</p>
+<b>
+4.	Are these workshops free for participants?
+</b>
+<p>No, they are paid (Rs. 500 for each). *
+</p>
+<b>
+5.	Will accommodation be provided for the stay?
+</b>
+<p>
+Yes. Please check out our Hospitality Tab for details of the same.
+</p>
+<b>
+6.	Do these workshops have any selection criteria?
+</b>
+<p>
+No. The registrations will be done by following “first come first served” till the places are filled up.
+</p>
+<b>
+7.	Any specific (content related) prerequisites required and skills gained at the end?
+</b>
+<p>
+Prior knowledge related to Shear force, Bending Moments, will kick start you into the workshop.
+We introduce you to Staad Pro software, a powerful analysis and design tool for use in Structural Engineering Important concepts and application of this tool will be explained and demonstrated with a hands-on session.
+</p>
+<b>
+8. Will certificates be given to everyone?
+</b>
+<p>
+ Yes. Online Certificates will be given to all participants later (to be downloaded from site itself). 
+</p>
+<p><span style="color:red">*</span>A few free workshops are also conducted during the fest. Participants can register for them on-spot during Fest days. (Limited seats only)
+</p>
+    <br>
+    <p>
+    <span style="color:red">**</span>Check out the clashes with the other events at our fest and inform the concerned coordinators at earliest and appropriately.
+</p>       
+</div>
+            <div class="modal-footer">
+                <div class="left-side">
+                        <!-- <a href = "profile.php" style="color:white;" ><button name="submit1" class="btn btn-success btn-link">Register</button></a> -->
+                    </div>
+                <div class="right-side">
+                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
