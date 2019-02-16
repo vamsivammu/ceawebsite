@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: https://www.thecollegefever.com/');
+header('Access-Control-Allow-Origin: https://www.thecollegefever.com');
 
 require 'connection.php';
 session_start();
