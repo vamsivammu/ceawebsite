@@ -313,14 +313,33 @@ x.controller("confirm",function($scope,$http){
 
     $http({
         method:'post',
-        url:'http://ceaiitm.org/2019/ceawebsite/paymentconfirmation.php',
+        url:'http://ceaiitm.org/2019/ceawebsite/testing.php',
         data:{
-            name:'vamsi',
-            TicketName:'vammuvamsi64',
             amount:300,
             ticket_id:"a33",
-            email:'vammuvamsi64@gmail.com'
-            
+            ticketids:[
+                {
+                    name:"vamsi",
+                    email:"v@v.com",
+                    program:{
+                        n:"djv"
+                    }
+                },
+                {
+                    name:"vamsi",
+                    email:"v@v.com",
+                    program:{
+                        n:"djv"
+                    }
+                },
+                {
+                    name:"vamsi",
+                    email:"v@v.com",
+                    program:{
+                        n:"djv"
+                    }
+                }
+            ]
         },
          //headers:{"Access-Control-Allow-Headers":"Content-Type,Access-Control-Allow-Origin","Access-Control-Allow-Origin":true,"Content-Type":"application/x-www-form-urlencoded"}
         
