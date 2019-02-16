@@ -1294,7 +1294,7 @@ x.controller("profile",function($scope,$http){
                 }
                 $scope.regisevents = r.data.regisevents.split(",")
                 $scope.regisevents.splice(0,1)
-            // console.log($scope.regisevents)
+            console.log($scope.regisevents)
             console.log($scope.regworkshops)
             
             })
