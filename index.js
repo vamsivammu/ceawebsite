@@ -306,10 +306,10 @@ console.log("inside")
 
 x.controller("confirm",function($scope,$http){
     // var jsondata = $location.search.jsondata;
-     $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-     $http.defaults.useXDomain = true
+   //  $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+  //   $http.defaults.useXDomain = true
     // // Delete the Requested With Header
-     delete $http.defaults.headers.common['X-Requested-With'];
+//     delete $http.defaults.headers.common['X-Requested-With'];
 
     $http({
         method:'post',
