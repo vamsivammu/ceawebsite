@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: https://localhost');
+header('Access-Control-Allow-Origin: http://localhost');
 
 require 'connection.php';
 session_start();
