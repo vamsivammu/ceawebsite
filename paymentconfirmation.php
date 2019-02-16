@@ -2,7 +2,7 @@
 
 require 'connection.php';
 session_start();
-header('Access-Control-Allow-Origin: https://thecollegefever.com');
+header('Access-Control-Allow-Origin: https://www.thecollegefever.com/');
 
 header('Access-Control-Allow-Methods: GET, POST');
 
