@@ -953,9 +953,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                                 <ul class="list-unstyled follows">
                                     <li>
                                         <div class="row">
-                                        <? if(strpos($results['workshops'],'tructural Design')==TRUE){?>
+                                        <? if(strpos($results['workshops'],'STAAD PRO Workshop')==TRUE){?>
                                             <div class="col-md-4 col-sm-6 ml-auto mr-auto hover03 columnphoto">
-                                                <a><figure id="figurephoto" data-toggle="tooltip" data-placement="bottom" title="Structural Design"><img src="events/images/intro/workshop1" alt="Circle Image" class="img-circle img-no-padding img-responsive"/></figure></a>
+                                                <a><figure id="figurephoto" data-toggle="tooltip" data-placement="bottom" title="STAAD PRO Workshop"><img src="images/staadpro.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive"/></figure></a>
                                             </div>
                                         <?}?>
                                         <? if(strpos($results['workshops'],'Air Quality Control')==TRUE){?>

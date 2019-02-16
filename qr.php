@@ -17,24 +17,24 @@ $stmt2->execute();
 $b = $stmt2->get_result()->fetch_assoc();
 
 $festpayment = 'Not Paid';
-$structural = 'Not Paid';
-$air = 'Not Paid';
+$staadpro = 'Not Paid';
+// $air = 'Not Paid';
 $accpay = 0;
 
 if($b['festfee']==300){
     $festpayment="Paid";
 }
-if($b['structural']==500){
-    $structural = "Paid";
+if($b['staadpro']==500){
+    $staadpro = "Paid";
 }
-if($b['air']==500){
-    $air = "Paid";
+// if($b['air']==500){
+//     $air = "Paid";
 }
 if($b['accomodation']!=0){
     $accpay = $b['accomodation'];
 
 }
-$out='Name: '.$a['firstname']."\n".'CEA ID: '.$ceaid."\n".'College: '.$a['college']."\n".'Events Registered: '.$a['events']."\n".'Workshops Registered: '.$a['workshops']."\n".'Fest Payment: '.$festpayment."\n".'Structural Workshop: '.$structural."\n".'Air Quality Workshop: '.$air."\n".'Accomodation Payment: '.$accpay."\n";
+$out='Name: '.$a['firstname']."\n".'CEA ID: '.$ceaid."\n".'College: '.$a['college']."\n".'Events Registered: '.$a['events']."\n".'Workshops Registered: '.$a['workshops']."\n".'Fest Payment: '.$festpayment."\n".'Staad Pro Workshop: '.$staadpro."\n".'Accomodation Payment: '.$accpay."\n";
 $direc = __DIR__;
 $abs = $direc."/qrs/qr_".$a['ID'].".png";
 QRcode::png($out,$abs);        
