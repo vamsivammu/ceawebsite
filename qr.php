@@ -27,9 +27,9 @@ if($b['festfee']==300){
 if($b['staadpro']==500){
     $staadpro = "Paid";
 }
-// if($b['air']==500){
-//     $air = "Paid";
-}
+// // if($b['air']==500){
+// //     $air = "Paid";
+// }
 if($b['accomodation']!=0){
     $accpay = $b['accomodation'];
 
