@@ -415,10 +415,10 @@ i{
                         </ol>
                             <p style="color:black">Amount needed to be paid is</p>
                            
-                            <p style="color:black" ng-show="payment!==1">Fest registration Fee : &#x20B9 500</p>
+                            <p style="color:black" ng-show="payment!==1">Fest registration Fee : &#x20B9 300</p>
                             
-                            <b><p style="color:black">Workshop registration fee : &#x20B9 500 per workshop</p>
-                            <p style="color:black">Payments are to be done with <strong>1 hour</strong> of registration to confirm your seat</p></b>
+                            <b><p style="color:black">Workshop registration fee : &#x20B9 500 per person</p>
+                            <!-- <p style="color:black">Payments are to be done with <strong>1 hour</strong> of registration to confirm your seat</p></b> -->
                             <br>
                             <div class="form-group">
                                 <p>Select a Workshop:</p>
@@ -463,9 +463,10 @@ i{
                             <p ng-show="payment==1" style="color:black">{{workshop}} registration fee : &#x20B9 500 </p>
                         
                             <p ng-show="payment!==1" style="color:black">Fest registration Fee : &#x20B9 300<br> {{workshop}} registration fee : &#x20B9 500 <br><br> <b>Total amount needed to be paid : &#x20B9 800</b></p><br>
-                            <p style="font-weight: 500;color:black"><strong>Payments are to be done with 1 hour of registration to confirm your seat.<br>
-                            Registration will automatically get cancelled if payments are not done within 1 hour.</strong></p>
-                            <p style="font-weight: 500;color:black"><strong> Please mention your CEA ID in description during payment for reference</strong></p></center>
+                            <!-- <p style="font-weight: 500;color:black"><strong>Payments are to be done with 1 hour of registration to confirm your seat.<br>
+                            Registration will automatically get cancelled if payments are not done within 1 hour.</strong></p> -->
+                            <p style="font-weight: 500;color: black;"><strong>Registration doesn't mean that the seat is blocked.Your seat will only be blocked after payment is done. <br>NOTE:There are less number of seats and it is advisable to book your seats at the earliest.</strong></p>
+                           <!--  <p style="font-weight: 500;color:black"><strong> Please mention your CEA ID in description during payment for reference</strong></p></center> -->
                                 <p style="color:#868e96">Please mention your Degree <font color="red"> *</font></p>
                                 <div class="form-group">
                                     <select class="form-control" ng-model="deg">

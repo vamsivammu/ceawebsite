@@ -6,16 +6,17 @@
 
     }
     .poster{
-        margin-top: 40px;
+        margin-top: 10px;
         cursor: pointer;
+        
         width: 30%;
-        height: auto;
+        height: 80%;
         transition:1s;
         
     }
 
     .poster:hover{
-        width:32%;
+        width:31%;
     }
 
     .workshoptype{
@@ -58,7 +59,13 @@
 <div style="background-color:white;min-height:100%;">
 
     <div class="workshopposter">
-        <img class="poster" ng-click="showbentley()" src="images/workshop.jpg">
+        <div class="container">
+            <div class="row">
+                <img class="poster col-md-6 col-sm-12" ng-click="showbentley()" src="images/staadpro.jpg">
+                <img class="poster col-md-6 col-sm-12" ng-click="showbentley()" src="images/workshop.jpg">
+            </div>  
+        </div>  
+        
     </div>
     <div class="workshopcontent">
         <hr>
@@ -84,35 +91,39 @@
                 <p>7.)<b> Register for the workshop through profile page</b></p>
             </div>
             <div id = "fdet" class="workshopdetails">
-                <div class="row justify-content-around" >
+                <div class="container">
 
-                    <div class="col-sm-4" >
+                    <div class="row justify-content-around" >
 
-                        <h4 style="text-align:center"><b>3D Printable Concrete</b></h4>
-                        <hr>
-                        <p> Different techniques in digital fabrication that can be applied in construction</p>
-                        <p> Advantages and applications</p>
-                        <p> Examples and construction sequence of  some 3D printed structure</p>
-                        <p> Research at IIT Madras</p>
-                        <p><b> On Spot Registraion</b> </p>
+                        <div class="col-sm-4" >
+
+                            <h4 style="text-align:center"><b>3D Printable Concrete</b></h4>
+                            <hr>
+                            <p> Different techniques in digital fabrication that can be applied in construction</p>
+                            <p> Advantages and applications</p>
+                            <p> Examples and construction sequence of  some 3D printed structure</p>
+                            <p> Research at IIT Madras</p>
+                            <p><b> On Spot Registration</b> </p>
+                            
+                        </div>
                         
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <h4 style="text-align:center"><b>GIS Workshop</b></h4>
-                        <hr>
-                        <p>Introduction to GIS (Geographical information system) and applications</p>
-                        <p><b> On Spot Registraion</b> </p>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <h4 style="text-align:center"><b>Building Automation</b></h4>
-                        <hr>
-                        <p>Trends of Automation in Civil Engineering (lecture)
-                            and
-                            Demonstration of automated modular construction</p>
-                            <p><b> On Spot Registraion</b> </p>
-                    </div>
+                        <div class="col-sm-4">
+                            <h4 style="text-align:center"><b>GIS Workshop</b></h4>
+                            <hr>
+                            <p>Introduction to GIS (Geographical information system) and applications</p>
+                            <p><b> On Spot Registration</b> </p>
+                        </div>
+                        
+                        <div class="col-sm-4">
+                            <h4 style="text-align:center"><b>Building Automation</b></h4>
+                            <hr>
+                            <p>Trends of Automation in Civil Engineering (lecture)
+                                and
+                                Demonstration of automated modular construction</p>
+                                <p><b> On Spot Registration</b> </p>
+                        </div>
+
+                    </div>    
                 </div>
                 <br><br>
             </div>
@@ -182,7 +193,10 @@ We introduce you to Staad Pro software, a powerful analysis and design tool for 
     <br>
     <p>
     <span style="color:red">**</span>Check out the clashes with the other events at our fest and inform the concerned coordinators at earliest and appropriately.
-</p>       
+</p>   
+<p>
+ <b>In case of any queries, please contact Yukti: 7087146594, Srilok: 9177997961 </b>
+</p>    
 </div>
             <div class="modal-footer">
                 <div class="left-side">
@@ -195,3 +209,85 @@ We introduce you to Staad Pro software, a powerful analysis and design tool for 
             </div>
         </div>
     </div>
+
+    <!-- free workshops -->
+
+
+<div class="modal fade" id="free" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="text-align:center;" id="exampleModalLabel">Free Workshop FAQs</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 style="text-align:center;"><b>Free Workshops</b></h3>
+<b>
+1.  Who can participate in these workshops?</b>
+<p>
+This workshop is recommended to be taken up by Civil Engineering students who are currently in 2nd year or above and interested students currently enrolled for MTech in Civil Engineering.
+</p>
+<b>
+2.  What are the requirements for the workshops?
+</b>
+<p>
+Students are requested to bring their laptops(64-bit processor mandatory) along for the workshop. The training software and other necessary learning aids will be distributed at the venue.
+</p>
+<b>
+3.  What will be the duration of the workshops?
+</b>
+<p>The workshop will be conducted in the morning (check the fest schedule) on the said days  **
+</p>
+<b>
+4.  Are these workshops free for participants?
+</b>
+<p>Yes, these workshops are absolutely free for the participants. But the participants have to register for these workshops on-spot and we have a cap on the number of seats. Please check out for the announcements when you are the venue regarding the registrations. *
+</p>
+<b>
+5.  Will accommodation be provided for the stay?
+</b>
+<p>
+Yes. Please check out our Hospitality Tab for details of the same.
+</p>
+<b>
+6.  Do these workshops have any selection criteria?
+</b>
+<p>
+No. The registrations will be done by following “first come first served” till the places are filled up.
+</p>
+<!-- <b>
+7.  Any specific (content related) prerequisites required and skills gained at the end?
+</b>
+<p>
+Prior knowledge related to Shear force, Bending Moments, will kick start you into the workshop.
+We introduce you to Staad Pro software, a powerful analysis and design tool for use in Structural Engineering Important concepts and application of this tool will be explained and demonstrated with a hands-on session.
+</p> -->
+<b>
+7. Will certificates be given to everyone?
+</b>
+<p>
+ Yes. Online Certificates will be given to all participants later (to be downloaded from site itself). 
+</p>
+<p><span style="color:red">*</span>Note: We request you to be present at the venue 30 minutes before the start of the event in case of any installations of the software and other checks.
+</p>
+    <br>
+   <!--  <p>
+    <span style="color:red">**</span>Check out the clashes with the other events at our fest and inform the concerned coordinators at earliest and appropriately.
+</p>  -->  
+<p>
+ <b>In case of any queries, please contact- Rohit: 9414623832, Harikrishna: 8680902320, Kranthi: 9500183272 </b>
+</p>    
+</div>
+            <div class="modal-footer">
+                <div class="left-side">
+                        <!-- <a href = "profile.php" style="color:white;" ><button name="submit1" class="btn btn-success btn-link">Register</button></a> -->
+                    </div>
+                <div class="right-side">
+                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
