@@ -84,6 +84,12 @@ x.controller("workshops",function($scope){
         bent.modal("show");
     }
 
+    $scope.showf=function(){
+        var free = document.getElementById("free");
+        free = angular.element(free);
+        free.modal("free");
+    }
+
     $scope.paidworkshops = function(){
         var q = document.getElementById("paidworkshops");
         q = angular.element(q)
