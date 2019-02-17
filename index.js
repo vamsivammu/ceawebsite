@@ -306,19 +306,42 @@ console.log("inside")
 
 x.controller("confirm",function($scope,$http){
     // var jsondata = $location.search.jsondata;
-    // $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-    // $http.defaults.useXDomain = true
+   //  $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+  //   $http.defaults.useXDomain = true
     // // Delete the Requested With Header
-    // delete $http.defaults.headers.common['X-Requested-With'];
+//     delete $http.defaults.headers.common['X-Requested-With'];
 
     $http({
         method:'post',
         url:'http://ceaiitm.org/2019/ceawebsite/testing.php',
         data:{
-            name:'vamsi',
-            pass:'vammuvamsi64'
+            amount:300,
+            ticket_id:"a33",
+            ticketids:[
+                {
+                    name:"vamsi",
+                    email:"v@v.com",
+                    program:{
+                        n:"djv"
+                    }
+                },
+                {
+                    name:"vamsi",
+                    email:"v@v.com",
+                    program:{
+                        n:"djv"
+                    }
+                },
+                {
+                    name:"vamsi",
+                    email:"v@v.com",
+                    program:{
+                        n:"djv"
+                    }
+                }
+            ]
         },
-        // headers:{"Access-Control-Allow-Headers":"Content-Type,Access-Control-Allow-Origin","Access-Control-Allow-Origin":true,"Content-Type":"application/x-www-form-urlencoded"}
+         //headers:{"Access-Control-Allow-Headers":"Content-Type,Access-Control-Allow-Origin","Access-Control-Allow-Origin":true,"Content-Type":"application/x-www-form-urlencoded"}
         
        
     }).then(function(r){
