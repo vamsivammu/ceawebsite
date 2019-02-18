@@ -87,7 +87,7 @@ x.controller("workshops",function($scope){
     $scope.showf=function(){
         var free = document.getElementById("free");
         free = angular.element(free);
-        free.modal("free");
+        free.modal("show");
     }
 
     $scope.paidworkshops = function(){
