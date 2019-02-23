@@ -311,7 +311,7 @@ i{
                                 <option ng-click="changeevent('Concrete Challenge')">Concrete Challenge</option>
                                 <option ng-click="changeevent('Aquanomics')">Aquanomics</option>
                                 <!-- <option ng-click="changeevent('Bon Auto Routier')">Bon Auto Routier</option> -->
-                                <!-- <option ng-click="changeevent('Essay')">Essay</option> -->
+                                <option ng-click="changeevent('Essay')">Essay</option>
                                 <option ng-click="changeevent('Encode Steel')">Encode Steel</option>
                                 <!-- <option ng-click="changeevent('Debate')">Debate</option> -->
                                 <option ng-click="changeevent('SDC')">SDC</option>
@@ -373,7 +373,7 @@ i{
                             <!-- <?
                             if(strcmp($_SESSION["event"],'Aquanomics')!=0)
                             {?> -->
-                            <div ng-show="eventname!='Aquanomics' && eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
+                            <div ng-show="eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
                                 <label class="control-label col-md-12">4th member's CEA ID</label>
                                 <div class="input-group col-md-12">
                                     <input ng-change="mem4change()" class="form-control" type="text" name="fourthmem" ng-model="mem4" placeholder = "CEA19NXXXX" >
@@ -382,7 +382,7 @@ i{
                             </div>
                             <!-- <?if(strcmp($_SESSION["event"],'Concrete Challenge')!=0 and strcmp($_SESSION["event"],'Geo Genius')!=0 and strcmp($_SESSION["event"],'Master Builder')!=0 and strcmp($_SESSION["event"],'Encode Steel')!=0 )
                             {?> -->
-                            <div ng-show="eventname!='Aquanomics' && eventname!='Concrete Challenge' && eventname!='Geo Genius' && eventname!='Master Builder' && eventname!='Encode Steel' && eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
+                            <div ng-show="eventname != 'Essay' && eventname!='Potential Professor'" class="form-group">
                                 <label class="control-label col-md-12">5th member's CEA ID</label>
                                 <div class="input-group col-md-12">
                                     <input ng-change="mem5change()" class="form-control" type="text" name="fifthmem" ng-model="mem5"  placeholder = "CEA19NXXXX" >

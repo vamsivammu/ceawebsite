@@ -1485,11 +1485,10 @@ x.controller("profile",function($scope,$http){
         mod = angular.element(mod)
         if($scope.eventname!="Essay" && $scope.eventname!="Potential Professor"){
 
-            if($scope.eventname!="Aquanomics"){
+            if($scope.mem2isvalid){
 
-                if($scope.eventname!="Concrete Challenge" && $scope.eventname!="Geo Genius" && $scope.eventname!="Master Builder" && $scope.eventname!="Encode Steel"){
+                if($scope.mem3isvalid && $scope.mem4isvalid && $scope.mem5isvalid){
                     console.log($scope.mem2isvalid,$scope.mem3isvalid,$scope.mem4isvalid,$scope.mem5isvalid)
-                    if($scope.mem2isvalid && $scope.mem3isvalid && $scope.mem4isvalid && $scope.mem5isvalid){
                         $http({
                             method:'post',
                             url:'registerforevent1.php',
@@ -1524,14 +1523,10 @@ x.controller("profile",function($scope,$http){
                             }
                         })
                     
-                    }else{
                         
-                        bo.loadingModal('hide')
-                        alert("One of the IDs is invalid or empty")
-                    }    
                    
 
-                }else{
+                }else if(($scope.mem3isvalid && $scope.mem4isvalid) || ($scope.mem4isvalid && $scope.mem5isvalid) || ($scope.mem3isvalid && $scope.mem5isvalid)){
                     console.log($scope.mem2isvalid,$scope.mem3isvalid,$scope.mem4isvalid,$scope.mem5isvalid)
                     
                     if($scope.eventname=="Geo Genius"){
