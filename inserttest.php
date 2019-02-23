@@ -12,12 +12,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     // $hash_password=sha1("V@ms!3235");
     // $conf_code= md5(uniqid(rand()));
     // $gender = "M";
-   $stmt1 = $con->prepare("INSERT INTO testinsert(name,email) VALUES(?,?);");
-   $stmt1->bind_param("ss",$name,$email);
+   $stmt1 = $con->prepare("INSERT INTO testinsert(name,email,phone) VALUES(?,?,?);");
+   $stmt1->bind_param("ssi",$name,$email,$phone);
    $name = "vamsi";
     $phone = "9999999999";
     $college = "test";
-    $email= "test@test.testestttttttt";
+    $email= "test@test.testesttttttttttt";
     
     if($stmt1->execute()){
         $resp['status'] = 1;
