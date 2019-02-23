@@ -15,11 +15,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $dd = json_decode($d);
     @$amount = (string)$dd->amount;
     @$tickid = (string)$dd->ticket_id;
-    @$ticketitems = (array)$dd->ticketitems;
+
+    @$ticketitems = $dd->ticketids;
     $resp['a'] = $ticketitems;
     $resp['b'] = $tickid;
     $resp['c'] = $amount;
 
+    foreach($ticketitems as $ticketitem){
+        // $resp['d'] = $ticketitem->name;
+        // $resp['d'] = $mm;
+        $name = (string)$ticketitem->name;
+        
+    }
 
 }
 
