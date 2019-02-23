@@ -15,6 +15,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
    
     if($stmt1->execute()){
         $resp['status'] = 1;
+    }else{
+        $resp['status'] = 0;
     }
 }
 echo json_encode($resp);
