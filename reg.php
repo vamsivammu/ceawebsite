@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if($s['email']==$email){
         $resp['status']=0;
     }else{
-        $stmt1=$con1->prepare("INSERT INTO `userrs2019`(`firstname`, `phone`, `college`, `email`, `hash_password`, `conf_code`, `gender`) VALUES(?,?,?,?,?,?,?);");
+        $stmt1=$con1->prepare("INSERT INTO `user2019`(`firstname`, `phone`, `college`, `email`, `hash_password`, `conf_code`, `gender`) VALUES(?,?,?,?,?,?,?);");
         $stmt1->bind_param("sssssss",$name,$phone,$college,$email1,$hash_password,$conf_code,$gender);
         $name = $n;
         $phone = $ph;
