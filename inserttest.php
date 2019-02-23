@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
    $stmt1 = $con->prepare("INSERT INTO testinsert(name,email,phone) VALUES(?,?,?);");
    $stmt1->bind_param("ssi",$name,$email,$phone);
    $name = "vamsi";
-    $phone = "9999999999";
+    $phone = 999999999;
     $college = "test";
     $email= "test@test.testesttttttttttt";
     
