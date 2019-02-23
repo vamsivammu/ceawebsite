@@ -1294,6 +1294,7 @@ x.controller("profile",function($scope,$http){
     $scope.mem2=""
     $scope.mem3=""
     $scope.mem4=""
+    $scope.mem5=""
     $scope.namepattern=/^[a-zA-Z ]{3,}$/;
     $scope.mobilepattern = /^[0-9]{10,10}$/;
     $scope.addpatt=/^[a-zA-Z ,-/]{2,}$/
@@ -1483,291 +1484,153 @@ x.controller("profile",function($scope,$http){
         bo.loadingModal('animation','foldingCube').loadingModal('backgroundColor', 'gray')
         var mod = document.getElementById("multieventregisterModal")
         mod = angular.element(mod)
-        if($scope.eventname!="Essay" && $scope.eventname!="Potential Professor"){
-
-            if($scope.mem2isvalid){
-
-                if($scope.mem3isvalid && $scope.mem4isvalid && $scope.mem5isvalid){
-                    console.log($scope.mem2isvalid,$scope.mem3isvalid,$scope.mem4isvalid,$scope.mem5isvalid)
-                        $http({
-                            method:'post',
-                            url:'registerforevent1.php',
-                            data:{
-                                mem1:$scope.ceaid,
-                                mem2:$scope.mem2,
-                                mem3:$scope.mem3,
-                                mem4:$scope.mem4,
-                                mem5:$scope.mem5,
-                                event:$scope.eventname
-                            },
-                            headers:{'Content-Type':'application/x-form-www-urlencoded'}
-                        }).then(function(r){
-                            if(r.data.status==1){
-                                mod.modal('hide')
-                                bo.loadingModal('hide')
-                                alert("successfully registered for "+$scope.eventname +" event")
-                                window.location.reload()
-                            }else if(r.data.status==-1){
-                                
-                                bo.loadingModal('hide')
-                                alert("one of your teammates has been already registered")
-                            }else if(r.data.status==-3){
-                                bo.loadingModal('hide')
-                                alert("One of your teammates ID is not found")
-                            }
-                            else{
-                                
-                                bo.loadingModal('hide')
-                                alert("Please try again after some time")
-                                window.location.pathname="/2019/ceawebsite/profile"
-                            }
-                        })
-                    
-                        
-                   
-
-                }else if(($scope.mem3isvalid && $scope.mem4isvalid) || ($scope.mem4isvalid && $scope.mem5isvalid) || ($scope.mem3isvalid && $scope.mem5isvalid)){
-                    console.log($scope.mem2isvalid,$scope.mem3isvalid,$scope.mem4isvalid,$scope.mem5isvalid)
-                    
-                    if($scope.eventname=="Geo Genius"){
-                        
-                        if($scope.mem2isvalid){
-
-                            if($scope.mem3.length==0 && $scope.mem4.length==0){
-                                $http({
-                                    method:'post',
-                                    url:'registerforevent2.php',
-                                    data:{
-                                        mem1:$scope.ceaid,
-                                        mem2:$scope.mem2,
-                                        mem3:$scope.mem3,
-                                        mem4:$scope.mem4,
-                                        event:$scope.eventname
-                                    },
-                                    headers:{'Content-Type':'application/x-form-www-urlencoded'}
-                                }).then(function(r){
-                                    if(r.data.status==1){
-                                        mod.modal('hide')
-                                        bo.loadingModal('hide')
-                                        alert("successfully registered for "+$scope.eventname +" event")
-                                        window.location.reload()
-                                    }else if(r.data.status==-1){
-                                        
-                                        bo.loadingModal('hide')
-                                        alert("one of your teammates has been already registered")
-                                    }else if(r.data.status==-3){
-                                        bo.loadingModal('hide')
-                                        alert("One of your teammates ID is not found")
-                                    }
-                                    else{
-                                        
-                                        bo.loadingModal('hide')
-                                        alert("Please try again after some time")
-                                        window.location.pathname="/2019/ceawebsite/profile"
-                                    }
-                                })
-                            }else if($scope.mem3.length==0){
-                                if($scope.mem4isvalid){
-                                    $http({
-                                        method:'post',
-                                        url:'registerforevent3.php',
-                                        data:{
-                                            mem1:$scope.ceaid,
-                                            mem2:$scope.mem2,
-                                            mem3:$scope.mem4,
-                                            event:$scope.eventname
-                                        },
-                                        headers:{'Content-Type':'application/x-form-www-urlencoded'}
-                                    }).then(function(r){
-                                        if(r.data.status==1){
-                                            mod.modal('hide')
-                                            bo.loadingModal('hide')
-                                            alert("successfully registered for "+$scope.eventname +" event")
-                                            window.location.reload()
-                                        }else if(r.data.status==-1){
-                                            
-                                            bo.loadingModal('hide')
-                                            alert("one of your teammates has been already registered")
-                                        }else if(r.data.status==-3){
-                                            bo.loadingModal('hide')
-                                            alert("One of your teammates ID is not found")
-                                        }
-                                        else{
-                                            
-                                            bo.loadingModal('hide')
-                                            alert("Please try again after some time")
-                                            window.location.pathname="/2019/ceawebsite/profile"
-                                        }
-                                    })
-                                }else{
-                                    
-                        bo.loadingModal('hide')
-                        alert("One of the IDs is invalid or empty")
-                                }
-                            }else if($scope.mem4.length==0){
-                                if($scope.mem3isvalid){
-                                    $http({
-                                        method:'post',
-                                        url:'registerforevent3.php',
-                                        data:{
-                                            mem1:$scope.ceaid,
-                                            mem2:$scope.mem2,
-                                            mem3:$scope.mem3,
-                                            event:$scope.eventname
-                                        },
-                                        headers:{'Content-Type':'application/x-form-www-urlencoded'}
-                                    }).then(function(r){
-                                        if(r.data.status==1){
-                                            mod.modal('hide')
-                                            bo.loadingModal('hide')
-                                            alert("successfully registered for "+$scope.eventname +" event")
-                                            window.location.reload()
-                                        }else if(r.data.status==-1){
-                                            
-                                            bo.loadingModal('hide')
-                                            alert("one of your teammates has been already registered")
-                                        }else if(r.data.status==-3){
-                                            bo.loadingModal('hide')
-                                            alert("One of your teammates ID is not found")
-                                        }
-                                        else{
-                                            
-                                            bo.loadingModal('hide')
-                                            alert("Please try again after some time")
-                                            window.location.pathname="/2019/ceawebsite/profile"
-                                        }
-                                    })
-                                }else{
-                                    
-                        bo.loadingModal('hide')
-                        alert("One of the IDs is invalid or empty")
-                                }
-                            }
-
-                        }else{
-                            bo.loadingModal('hide')
-                            alert("One of the IDs is invalid or empty")
-                        }
-                    }
-                    else if($scope.mem2isvalid && $scope.mem3isvalid && $scope.mem4isvalid){
-                        $http({
-                            method:'post',
-                            url:'registerforevent2.php',
-                            data:{
-                                mem1:$scope.ceaid,
-                                mem2:$scope.mem2,
-                                mem3:$scope.mem3,
-                                mem4:$scope.mem4,
-                                event:$scope.eventname
-                            },
-                            headers:{'Content-Type':'application/x-form-www-urlencoded'}
-                        }).then(function(r){
-                            if(r.data.status==1){
-                                mod.modal('hide')
-                                bo.loadingModal('hide')
-                                alert("successfully registered for "+$scope.eventname +" event")
-                                window.location.reload()
-                            }else if(r.data.status==-1){
-                                
-                                bo.loadingModal('hide')
-                                alert("one of your teammates has been already registered")
-                            }else if(r.data.status==-3){
-                                bo.loadingModal('hide')
-                                alert("One of your teammates ID is not found")
-                            }
-                            else{
-                                
-                                bo.loadingModal('hide')
-                                alert("Please try again after some time")
-                                window.location.pathname="/2019/ceawebsite/profile"
-                            }
-                        })
-                    
-                    }else{
-                        
-                        bo.loadingModal('hide')
-                        alert("One of the IDs is invalid or empty")
-                    }
-                    
-
-                }
-
-            }else{
-                console.log($scope.mem2isvalid,$scope.mem3isvalid,$scope.mem4isvalid,$scope.mem5isvalid)
-                    
-                if($scope.mem2isvalid && $scope.mem3isvalid){
-                    $http({
-                        method:'post',
-                        url:'registerforevent3.php',
-                        data:{
-                            mem1:$scope.ceaid,
-                            mem2:$scope.mem2,
-                            mem3:$scope.mem3,
-                            event:$scope.eventname
-                        },
-                        headers:{'Content-Type':'application/x-form-www-urlencoded'}
-                    }).then(function(r){
-                        if(r.data.status==1){
-                            mod.modal('hide')
-                            bo.loadingModal('hide')
-                            alert("successfully registered for "+$scope.eventname +" event")
-                            window.location.reload()
-                        }else if(r.data.status==-1){
-                            
-                            bo.loadingModal('hide')
-                            alert("one of your teammates has been already registered")
-                        }else if(r.data.status==-3){
-                            bo.loadingModal('hide')
-                            alert("One of your teammates ID is not found")
-                        }
-                        else{
-                            
-                            bo.loadingModal('hide')
-                            alert("Please try again after some time")
-                            window.location.pathname="/2019/ceawebsite/profile"
-                        }
-                    })
-                }else{
-                    
-                    bo.loadingModal('hide')
-                    alert("One of the IDs is invalid or empty")
-                }
-                
-
-            }
-
-
-        }else{
-            
+        if($scope.eventname=="Potential Professor" || $scope.eventname=="Essay"){
             $http({
                 method:'post',
                 url:'registerforevent4.php',
                 data:{
                     mem1:$scope.ceaid,
                     event:$scope.eventname
-                },
-                headers:{'Content-Type':'application/x-form-www-urlencoded'}
+                }
             }).then(function(r){
-                    if(r.data.status==1){
-                        mod.modal('hide')
-                        bo.loadingModal('hide')
-                        alert("successfully registered for "+$scope.eventname +" event")
-                        window.location.reload()
-                    }else if(r.data.status==-1){
-                        
-                        bo.loadingModal('hide')
-                        alert("you have been already registered")
-                    }else{
-                        
-                        bo.loadingModal('hide')
-                        alert("Please try again after some time")
-                        window.location.pathname="/2019/ceawebsite/profile"
-                    }
+                bo.loadingModal('hide')
+                if(r.data.status==1){
+                    alert("You have been successfully registered for "+$scope.eventname + " event")
+                    window.location.pathname="2019/ceawebsite/profile"
+                }else if(r.data.status==0){
+                    alert("You have been already registered for this event")
+                    window.location.pathname = "2019/ceawebsite/profile"
+                }else{
+                    alert("Please try again again after some time")
+                    window.location.pathname = "2019/ceawebsite/profile"
+                }
             })
+        }else{
+            if($scope.mem2isvalid){
+                if($scope.mem3isvalid){
+                    if($scope.mem4isvalid){
+                        if($scope.mem5isvalid){
+                            $http({
+                                method:'post',
+                                url:'registerforevent1.php',
+                                data:{
+                                    mem1:$scope.ceaid,
+                                    mem2:$scope.mem2,
+                                    mem3:$scope.mem3,
+                                    mem4:$scope.mem4,
+                                    mem5:$scope.mem5,
+                                    event:$scope.eventname
+                                }
+                            }).then(function(r){
+                                
+                bo.loadingModal('hide')
+                                if(r.data.status==1){
+                                    alert("You have been successfully registered for " + $scope.eventname + " event")
+                                    window.location.pathname = "2019/ceawebsite/profile"
+                                }else if(r.data.status==-1){
+                                    alert("One of your teammates is already registered")
+                                    window.location.pathname = "2019/ceawebsite/profile"
+                                }else if(r.data.status== -3){
+                                    alert("One of the IDs is not found")
+                                }else{
+                                    alert("Please try again after sometime")
+                                    window.location.pathname = "2019/ceawebsite/profile"
+                                }
+                            })
+                        }else if($scope.mem5.length!=0){
+                            alert("Please check member-5 ID")
+                        }else{
+                            $http({
+                                method:'post',
+                                url:'registerforevent2.php',
+                                data:{
+                                    mem1:$scope.ceaid,
+                                    mem2:$scope.mem2,
+                                    mem3:$scope.mem3,
+                                    mem4:$scope.mem4,
+                                    event:$scope.eventname
+                                }
+                            }).then(function(r){
+                                
+                bo.loadingModal('hide')
+                                if(r.data.status==1){
+                                    alert("You have been successfully registered for " + $scope.eventname + " event")
+                                    window.location.pathname = "2019/ceawebsite/profile"
+                                }else if(r.data.status==-1){
+                                    alert("One of your teammates is already registered")
+                                    window.location.pathname = "2019/ceawebsite/profile"
+                                }else if(r.data.status== -3){
+                                    alert("One of the IDs is not found")
+                                }else{
+                                    alert("Please try again after sometime")
+                                    window.location.pathname = "2019/ceawebsite/profile"
+                                }
+                            })
+                        }
+                    }else if($scope.mem4.length!=0){
+                        alert("Please check member-4 ID")
+                    }else{
+                        $http({
+                            method:'post',
+                            url:'registerforevent3.php',
+                            data:{
+                                mem1:$scope.ceaid,
+                                mem2:$scope.mem2,
+                                mem3:$scope.mem3,
+                                event:$scope.eventname
+                            }
+                        }).then(function(r){
+                            
+                bo.loadingModal('hide')
+                            if(r.data.status==1){
+                                alert("You have been successfully registered for " + $scope.eventname + " event")
+                                window.location.pathname = "2019/ceawebsite/profile"
+                            }else if(r.data.status==-1){
+                                alert("One of your teammates is already registered")
+                                window.location.pathname = "2019/ceawebsite/profile"
+                            }else if(r.data.status== -3){
+                                alert("One of the IDs is not found")
+                            }else{
+                                alert("Please try again after sometime")
+                                window.location.pathname = "2019/ceawebsite/profile"
+                            }
+                        })
+                    }
+                }else if($scope.mem3.length!=0){
+                    alert("Please check member-3 ID")
+                }else{
+                    $http({
+                        method:'post',
+                        url:'registerforevent5.php',
+                        data:{
+                            mem1:$scope.ceaid,
+                            mem2:$scope.mem2,
+                            event:$scope.eventname
+                        }
+                    }).then(function(r){
+                        
+                bo.loadingModal('hide')
+                        if(r.data.status==1){
+                            alert("You have been successfully registered for " + $scope.eventname + " event")
+                            window.location.pathname = "2019/ceawebsite/profile"
+                        }else if(r.data.status==-1){
+                            alert("One of your teammates is already registered")
+                            window.location.pathname = "2019/ceawebsite/profile"
+                        }else if(r.data.status== -3){
+                            alert("One of the IDs is not found")
+                        }else{
+                            alert("Please try again after sometime")
+                            window.location.pathname = "2019/ceawebsite/profile"
+                        }
+                    })
+                }
+            }else{
+                
+                bo.loadingModal('hide')
+                alert("Atleast two members have to be registered")
 
+            }
         }
-
-    
     }
 
     $scope.changeworkshop=function(){
