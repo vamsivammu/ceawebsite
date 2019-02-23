@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $hash_password=sha1($p);
         $conf_code= md5(uniqid(rand()));
         $gender = $g[0];
-
+        $resp['c'] = $email1;
         if($stmt1->execute()){
             $resp['status']=1;
             $sub="Welcome to CEA 2019";
