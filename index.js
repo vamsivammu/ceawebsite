@@ -43,6 +43,9 @@ x.config(function($routeProvider,$locationProvider){
     }).when("/loginverify",{
         templateUrl:"loading.html",
         controller:"loginverify"
+    }).when("/testinsert",{
+        templateUrl:"loading.html",
+        controller:"testinsert"
     }).when("/loading",{
         templateUrl:"loading1.html",
         controller:"loader"
@@ -70,7 +73,14 @@ x.run(function($rootScope, $templateCache) {
     });
  });
 //Registration
-
+x.controller("testinsert",function($http){
+    $http({
+        method:'post',
+        url:'inserttest.php'
+    }).then(function(r){
+        console.log(r)
+    })
+})
 
 var email;
 x.controller("comingsoon",function(){

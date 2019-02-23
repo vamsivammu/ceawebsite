@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $resp['g'] = $hash_password;
         $resp['h'] = $phone;
         $resp['i'] = $name;
-        
+        //$stmt1->execute();
         if($stmt1->execute()){
             $resp['status']=1;
             // $sub="Welcome to CEA 2019";
