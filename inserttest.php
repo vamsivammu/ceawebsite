@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     // $conf_code= md5(uniqid(rand()));
     // $gender = "M";
    $stmt1 = $con->prepare("INSERT INTO testinsert(name) VALUES(?);");
-   $stmt->bind_param("s",$name);
+   $stmt1->bind_param("s",$name);
    $name   = "vamsi";
     if($stmt1->execute()){
         $resp['status'] = 1;
