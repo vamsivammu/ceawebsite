@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					$headers = "From:CEA Web Operations <webops@ceaiitm.org>\r\n";
 					$headers .= "MIME-Version: 1.0\r\n";
 					$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-					mail($email,$sub,$msg4,$headers);
+					//mail($email,$sub,$msg4,$headers);
                     
                 }
 
