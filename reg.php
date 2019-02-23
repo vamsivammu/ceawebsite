@@ -5,13 +5,15 @@ $resp = array();
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $d = file_get_contents("php://input");
     $dd = json_decode($d);
-    @$em = $dd->email;
-    @$n = $dd->name;
-    @$ph = $dd->phone;
-    @$g = $dd->gender;
-    @$p = $dd->password;
-    @$cn = $dd->clgname;
-
+    @$em = (string)$dd->email;
+    @$n = (string)$dd->name;
+    @$ph = (string)$dd->phone;
+    @$g = (string)$dd->gender;
+    @$p = (string)$dd->password;
+    @$cn = (string)$dd->clgname;
+    $resp['a'] = $em;
+    $resp['b'] = $n;
+    
     $stmt = $con->prepare("SELECT * FROM user2019 where email=?;");
     $stmt->bind_param("s",$email);
     $email = $em;

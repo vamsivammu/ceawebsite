@@ -647,6 +647,7 @@ x.controller("registration",function($scope,$http){
                 },
                 headers:{"Content-Type":"application/x-www-form-urlencoded"}
             }).then(function(r){
+                console.log(r)
             $scope.regdata = r.data
                 if(r.data.status==1){
                     window.location.pathname="/2019/ceawebsite/login"
