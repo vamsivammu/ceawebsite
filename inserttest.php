@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $name = "vamsi";
     $phone = "9999999999";
     $college = "test";
-    $email1= "test@test.testestttttttt";
+    $email1= "test@test.testestttttttttttt";
     $hash_password=sha1("V@ms!3235");
     $conf_code= md5(uniqid(rand()));
     $gender = "M";
