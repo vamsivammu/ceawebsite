@@ -100,6 +100,19 @@ x.controller("workshops",function($scope){
         free.modal("show");
     }
 
+    $scope.showbridge=function(){
+        var bridge = document.getElementById("bridge");
+        bridge = angular.element(bridge);
+        bridge.modal("show");
+    }
+
+     $scope.showprima=function(){
+        var prima = document.getElementById("prima");
+        prima = angular.element(prima);
+        prima.modal("show");
+    }
+
+
     $scope.paidworkshops = function(){
         var q = document.getElementById("paidworkshops");
         q = angular.element(q)
