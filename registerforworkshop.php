@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $ev = $curwork;
         $stmt->execute();
         $stmt->store_result();
-        if($stmt->num_rows()<50){
+        if($stmt->num_rows()<100){
             $stmt2 = $con2->prepare("INSERT INTO events (event,captain,vicecaptain,3rdmem)  VALUES(?,?,?,?);");
             $stmt2->bind_param("ssss",$eve,$capid,$yer,$stre);
             $eve = $curwork;
